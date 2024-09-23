@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bem7qrq8uj4dj"]
+[gd_scene load_steps=3 format=3 uid="uid://bem7qrq8uj4dj"]
+
+[ext_resource type="Texture2D" uid="uid://bxjdce3y05nsm" path="res://icon.svg" id="1_2utfi"]
 
 [sub_resource type="GDScript" id="GDScript_rc2sw"]
 script/source = "extends CharacterBody2D
@@ -33,3 +35,7 @@ script = SubResource("GDScript_rc2sw")
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 
 [node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(143, 2)
+texture = ExtResource("1_2utfi")
