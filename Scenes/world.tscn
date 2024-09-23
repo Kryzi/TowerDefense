@@ -13,7 +13,3 @@ point_count = 6
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_8kyd7")
 script = ExtResource("1_4exjo")
-
-[node name="Virus1Timer" type="Timer" parent="Path2D"]
-
-[connection signal="timeout" from="Path2D/Virus1Timer" to="Path2D" method="_on_virus_1_timer_timeout"]
