@@ -18,7 +18,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Virus1" type="PathFollow2D"]
+[node name="Virus1" type="PathFollow2D" groups=["enemy"]]
 rotates = false
 script = ExtResource("1_5ncgj")
 

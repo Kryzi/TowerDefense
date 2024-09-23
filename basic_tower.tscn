@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://djh8nk3dgcjpd"]
+
+[ext_resource type="Script" path="res://Scripts/basic_tower.gd" id="1_4dmiy"]
+[ext_resource type="Script" path="res://Scripts/attack.gd" id="2_4rerw"]
+
+[node name="BasicTower" type="StaticBody2D"]
+script = ExtResource("1_4dmiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Attack" type="Area2D" parent="."]
+script = ExtResource("2_4rerw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+
+[node name="Cooldown" type="Timer" parent="Attack"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Attack/Cooldown" to="Attack" method="_on_cooldown_timeout"]
