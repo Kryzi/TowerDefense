@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://clb85plprtw5g"]
+[gd_scene load_steps=3 format=3 uid="uid://clb85plprtw5g"]
+
+[ext_resource type="Script" path="res://Scripts/Virus1.gd" id="1_5ncgj"]
+[ext_resource type="Texture2D" uid="uid://lmbv26734mck" path="res://icon.svg" id="1_dls6g"]
 
 [node name="Virus1" type="PathFollow2D"]
+script = ExtResource("1_5ncgj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dls6g")
