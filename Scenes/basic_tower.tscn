@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/basic_tower.gd" id="1_4dmiy"]
 [ext_resource type="Script" path="res://Scripts/attack.gd" id="2_4rerw"]
 [ext_resource type="Texture2D" uid="uid://3twjdddkaohn" path="res://assets/VirusBigPack/png57.png" id="2_hcy63"]
-[ext_resource type="PackedScene" path="res://Scenes/bullet.tscn" id="3_1dth8"]
+[ext_resource type="PackedScene" uid="uid://crwl6ck1i5o8s" path="res://Scenes/bullet.tscn" id="3_1dth8"]
 
 [node name="BasicTower" type="StaticBody2D"]
 script = ExtResource("1_4dmiy")

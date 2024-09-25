@@ -24,6 +24,7 @@ func damage(amount):
 		die()
 
 func die():
+	get_tree().paused = true
 	print("i am dead")
 	Restart.show()
 	Quit.show()
