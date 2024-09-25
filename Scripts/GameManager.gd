@@ -1,6 +1,6 @@
 extends Node2D
 
-const BASICTOWER = preload("res://Scenes/basic_tower.tscn")
+const BASICTOWER = preload("res://Scenes/tower.tscn")
 @onready var world = get_parent()
 
 var Health = 1

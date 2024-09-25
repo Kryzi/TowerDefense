@@ -1,6 +1,7 @@
 extends Area2D
 var damage = 1000
 var travelled_distance = 0
+var pierce = 1
 
 func _physics_process(delta):
 	const SPEED = 200
@@ -21,4 +22,8 @@ func _on_body_entered(body):
 	if body.name == "TileMap":
 		queue_free()
 	else:
-		print("hit")
+		body.get_parent().takeDamage(damage)
+		pierce -= 1
+	
+	if pierce >= 0:
+		queue_free()
