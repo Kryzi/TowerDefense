@@ -54,5 +54,21 @@ offset_bottom = 252.0
 theme_override_font_sizes/normal_font_size = 30
 text = "HealthyText"
 
+[node name="Restart" type="Button" parent="."]
+offset_left = 343.0
+offset_top = 279.0
+offset_right = 408.0
+offset_bottom = 310.0
+text = "Restart"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 247.0
+offset_top = 272.0
+offset_right = 289.0
+offset_bottom = 303.0
+text = "Quit"
+
 [connection signal="pressed" from="NæsteRundeKnap" to="." method="_on_næste_runde_knap_pressed"]
 [connection signal="pressed" from="BasicTowerBuyButton" to="." method="_on_basic_tower_buy_button_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
