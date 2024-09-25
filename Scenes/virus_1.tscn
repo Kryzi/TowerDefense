@@ -1,29 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://clb85plprtw5g"]
 
 [ext_resource type="Script" path="res://Scripts/Virus1.gd" id="1_5ncgj"]
-[ext_resource type="Texture2D" uid="uid://ds5pl4iohkkcn" path="res://assets/pixil-frame-0.png" id="2_csw64"]
-[ext_resource type="Texture2D" uid="uid://cc2v5etd143jg" path="res://assets/pixil-frame-0 (1).png" id="3_2jxxf"]
+[ext_resource type="Texture2D" uid="uid://cktwdgag7th2k" path="res://assets/VirusBigPack/png2.png" id="2_8chso"]
+[ext_resource type="Texture2D" uid="uid://dhx4uovh0n7mj" path="res://assets/VirusBigPack/png3.png" id="3_iw1jt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_woiae"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_csw64")
+"texture": ExtResource("2_8chso")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2jxxf")
+"texture": ExtResource("3_iw1jt")
 }],
 "loop": true,
 "name": &"Idle",
 "speed": 2.0
 }]
 
-[node name="Virus1" type="PathFollow2D"]
+[node name="Virus1" type="PathFollow2D" groups=["enemy"]]
 rotates = false
 script = ExtResource("1_5ncgj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.526984, 0.526984)
 sprite_frames = SubResource("SpriteFrames_woiae")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.392069
+frame_progress = 0.929447

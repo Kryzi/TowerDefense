@@ -38,4 +38,5 @@ grow_horizontal = 0
 text = "Basic Tower"
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="NæsteRundeKnap" to="." method="_on_næste_runde_knap_pressed"]
 [connection signal="pressed" from="BasicTowerBuyButton" to="." method="_on_basic_tower_buy_button_pressed"]
