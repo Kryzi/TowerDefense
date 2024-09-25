@@ -10,7 +10,6 @@ func _ready():
 
 func _process(delta):
 	progress_ratio += speed * delta
-	
-	if progress_ratio >= 0.95: # Vi har nået slutningen af banen
+	if progress_ratio >= 0.99: # Vi har nået slutningen af banen
 		get_node("/root/World/GameManager").damage(damage)
 		queue_free()
