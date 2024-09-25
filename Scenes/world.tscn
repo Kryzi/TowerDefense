@@ -1,14 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyaeva2to770s"]
+[gd_scene load_steps=7 format=3 uid="uid://dyaeva2to770s"]
 
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
 [ext_resource type="PackedScene" uid="uid://djh8nk3dgcjpd" path="res://Scenes/basic_tower.tscn" id="2_b0sd5"]
 [ext_resource type="PackedScene" uid="uid://bfys168djkcgh" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
+[ext_resource type="Texture2D" uid="uid://cr1aqelrtduml" path="res://assets/Map 1.png" id="4_xfm3p"]
 
 [sub_resource type="Curve2D" id="Curve2D_8kyd7"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 290, 0, 0, 0, 0, 451, 290, 0, 0, 0, 0, 454, 150, 0, 0, 0, 0, 730, 150, 0, 0, 0, 0, 730, 290, 0, 0, 0, 0, 1200, 291)
 }
 point_count = 6
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3wt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xfm3p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="World" type="Node2D"]
 
@@ -27,5 +39,11 @@ text = "Next Round"
 position = Vector2(847, 347)
 
 [node name="GameManager" parent="." instance=ExtResource("3_qrw8v")]
+
+[node name="Map (background)" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_s3wt5")
 
 [connection signal="pressed" from="HUD/NæsteRundeKnap" to="Path2D" method="_on_næste_runde_knap_pressed"]
