@@ -40,6 +40,6 @@ func _on_hud_buy_basic_tower():
 	
 
 func _physics_process(delta: float) -> void:
-	MoneyText.text = str(Currency)
-	HealthText.text = str(Health)
+	MoneyText.text = "Money = " + str(Currency)
+	HealthText.text = "Health = "+ str(Health)
 	
