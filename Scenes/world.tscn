@@ -3,14 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
 [ext_resource type="PackedScene" uid="uid://djh8nk3dgcjpd" path="res://Scenes/basic_tower.tscn" id="2_b0sd5"]
 [ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/HUD.tscn" id="3_ho7cv"]
-[ext_resource type="PackedScene" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
+[ext_resource type="PackedScene" uid="uid://5xo7rqdu30d" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
 [ext_resource type="Texture2D" uid="uid://cr1aqelrtduml" path="res://assets/Map 1.png" id="4_xfm3p"]
-
-[sub_resource type="Curve2D" id="Curve2D_8kyd7"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 304, 0, 0, 0, 0, 225, 291, 13.4695, 81.9397, -13.4695, -81.9397, 320, 160, 66.1679, -0.820213, -66.1679, 0.820213, 224, 92, 13.4695, -101.022, -13.4695, 101.022, 148, 193, 0, 0, 0, 0, 287, 345.637, 0, 0, 0, 0, 514, 324.575, -28.9782, -37.1505, 28.9782, 37.1505, 613, 346.69, 39.6875, -42.4577, -39.6875, 42.4577, 622, 489.91, 53.5466, 35.1603, -53.5466, -35.1603, 508, 510.971, -20.8061, 36.7927, 20.8061, -36.7927, 489, 427.778, -11.774, 44.5568, 11.774, -44.5568, 516, 367.752, -17.818, 41.2805, 17.818, -41.2805, 491, 118.171, -61.3854, 3.54214, 61.3854, -3.54214, 625, 68.6756, -45.4084, -23.9095, 45.4084, 23.9095, 918, 119.224, 5.04538, -41.6202, -5.04538, 41.6202, 974, 202.417, 42.8857, 6.19875, -42.8857, -6.19875, 890, 238.222, 56.3401, -4.42768, -56.3401, 4.42768, 780, 195.046, 4.20448, -32.7648, -4.20448, 32.7648, 732, 240.328, -58.0483, -8.44883, 58.0483, 8.44883, 953, 419.353, 0, 0, 0, 0, 1174, 390.92)
-}
-point_count = 21
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3wt5"]
 animations = [{
@@ -23,7 +17,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_8kyd7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 304, 0, 0, 0, 0, 225, 291, 13.4695, 81.9397, -13.4695, -81.9397, 320, 160, 66.1679, -0.820213, -66.1679, 0.820213, 224, 92, 13.4695, -101.022, -13.4695, 101.022, 148, 193, 0, 0, 0, 0, 287, 345.637, 0, 0, 0, 0, 514, 324.575, -28.9782, -37.1505, 28.9782, 37.1505, 613, 346.69, 39.6875, -42.4577, -39.6875, 42.4577, 622, 489.91, 53.5466, 35.1603, -53.5466, -35.1603, 508, 510.971, -20.8061, 36.7927, 20.8061, -36.7927, 489, 427.778, -11.774, 44.5568, 11.774, -44.5568, 516, 367.752, -17.818, 41.2805, 17.818, -41.2805, 491, 118.171, -61.3854, 3.54214, 61.3854, -3.54214, 625, 68.6756, -45.4084, -23.9095, 45.4084, 23.9095, 918, 119.224, 5.04538, -41.6202, -5.04538, 41.6202, 974, 202.417, 42.8857, 6.19875, -42.8857, -6.19875, 890, 238.222, 56.3401, -4.42768, -56.3401, 4.42768, 780, 195.046, 4.20448, -32.7648, -4.20448, 32.7648, 732, 240.328, -58.0483, -8.44883, 58.0483, 8.44883, 953, 419.353, 0, 0, 0, 0, 1174, 390.92)
+}
+point_count = 21
+
 [node name="World" type="Node2D"]
+
+[node name="Map (background)" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(576, 324)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_s3wt5")
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(0, 16.7863)
@@ -38,10 +44,5 @@ position = Vector2(767, 412)
 
 [node name="GameManager" parent="." instance=ExtResource("3_qrw8v")]
 
-[node name="Map (background)" type="AnimatedSprite2D" parent="."]
-z_index = -10
-position = Vector2(576, 324)
-scale = Vector2(4.5, 4.5)
-sprite_frames = SubResource("SpriteFrames_s3wt5")
-
+[connection signal="buy_basic_tower" from="HUD" to="GameManager" method="_on_hud_buy_basic_tower"]
 [connection signal="next_round" from="HUD" to="Path2D" method="_on_hud_next_round"]

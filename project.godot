@@ -15,9 +15,20 @@ run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 enemy="ting der er skal skydes"
+
+[input]
+
+left_mouse_click={
+"deadzone": 0.5,
+"events": []
+}
 
 [rendering]
 
