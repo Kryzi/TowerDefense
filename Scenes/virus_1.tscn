@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://clb85plprtw5g"]
+[gd_scene load_steps=6 format=3 uid="uid://clb85plprtw5g"]
 
 [ext_resource type="Script" path="res://Scripts/Virus1.gd" id="1_5ncgj"]
 [ext_resource type="Texture2D" uid="uid://ds5pl4iohkkcn" path="res://assets/pixil-frame-0.png" id="2_csw64"]
@@ -18,6 +18,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2v60l"]
+radius = 25.02
+
 [node name="Virus1" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_5ncgj")
@@ -27,3 +30,8 @@ sprite_frames = SubResource("SpriteFrames_woiae")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.392069
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2v60l")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
