@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://djh8nk3dgcjpd"]
+[gd_scene load_steps=5 format=3 uid="uid://djh8nk3dgcjpd"]
 
 [ext_resource type="Script" path="res://Scripts/basic_tower.gd" id="1_4dmiy"]
 [ext_resource type="Script" path="res://Scripts/attack.gd" id="2_4rerw"]
+[ext_resource type="Texture2D" uid="uid://3twjdddkaohn" path="res://assets/VirusBigPack/png57.png" id="2_hcy63"]
+[ext_resource type="PackedScene" uid="uid://crwl6ck1i5o8s" path="res://Scenes/bullet.tscn" id="3_1dth8"]
 
 [node name="BasicTower" type="StaticBody2D"]
 script = ExtResource("1_4dmiy")
@@ -9,6 +11,9 @@ script = ExtResource("1_4dmiy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(58, 64)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_hcy63")
 
 [node name="Attack" type="Area2D" parent="."]
 script = ExtResource("2_4rerw")
@@ -18,5 +23,9 @@ script = ExtResource("2_4rerw")
 [node name="Cooldown" type="Timer" parent="Attack"]
 wait_time = 0.5
 autostart = true
+
+[node name="Bullet" parent="Attack" instance=ExtResource("3_1dth8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Bullet"]
 
 [connection signal="timeout" from="Attack/Cooldown" to="Attack" method="_on_cooldown_timeout"]

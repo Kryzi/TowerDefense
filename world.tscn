@@ -37,5 +37,5 @@ script = SubResource("GDScript_rc2sw")
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(143, 2)
+position = Vector2(193, -10)
 texture = ExtResource("1_2utfi")
