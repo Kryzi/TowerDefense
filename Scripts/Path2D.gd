@@ -2,9 +2,8 @@ extends Path2D
 
 const VIRUS_1 = preload("res://Scenes/virus_1.tscn")
 
-var currentRound = 1
+var currentRound = 0
 var waveDone = true
-var spawningDone = false
 
 func _ready():
 	pass
@@ -35,14 +34,11 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 			
 			call_deferred("add_child", virus)
 		
-	spawningDone = true
-
-
-
 
 
 func _on_næste_runde_knap_pressed():
-	if spawningDone == true:
+
+	if get_tree().get_nodes_in_group("enemy") == []:
 		currentRound += 1
 		waveDone = true
-		spawningDone = false
+	
