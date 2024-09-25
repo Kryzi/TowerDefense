@@ -12,9 +12,13 @@ config_version=5
 
 config/name="Tower Defense"
 run/main_scene="res://Scenes/world.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 enemy="ting der er skal skydes"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
