@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://djh8nk3dgcjpd"]
+[gd_scene load_steps=9 format=3 uid="uid://djh8nk3dgcjpd"]
 
 [ext_resource type="Script" path="res://Scripts/basic_tower.gd" id="1_4dmiy"]
 [ext_resource type="Script" path="res://Scripts/attack.gd" id="2_4rerw"]
 [ext_resource type="Texture2D" uid="uid://3twjdddkaohn" path="res://assets/VirusBigPack/png57.png" id="2_hcy63"]
 [ext_resource type="PackedScene" uid="uid://crwl6ck1i5o8s" path="res://Scenes/bullet.tscn" id="3_1dth8"]
-[ext_resource type="Texture2D" uid="uid://cc2v5etd143jg" path="res://assets/pixil-frame-0 (1).png" id="5_ycb8d"]
+[ext_resource type="Texture2D" uid="uid://dqpfvlqtwv1up" path="res://assets/Bullet 1.1.png" id="5_t636p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5kayc"]
+radius = 258.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6aupb"]
 radius = 175.071
@@ -16,6 +19,8 @@ radius = 21.0238
 script = ExtResource("1_4dmiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(55, 63)
+shape = SubResource("CircleShape2D_5kayc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(58, 64)
@@ -26,7 +31,7 @@ texture = ExtResource("2_hcy63")
 script = ExtResource("2_4rerw")
 
 [node name="range" type="CollisionShape2D" parent="Attack"]
-position = Vector2(58, 62)
+position = Vector2(59, 64)
 shape = SubResource("CircleShape2D_6aupb")
 
 [node name="Cooldown" type="Timer" parent="Attack"]
@@ -41,6 +46,6 @@ shape = SubResource("CircleShape2D_c6xl0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Attack/Bullet"]
 position = Vector2(214, 144)
-texture = ExtResource("5_ycb8d")
+texture = ExtResource("5_t636p")
 
 [connection signal="timeout" from="Attack/Cooldown" to="Attack" method="_on_cooldown_timeout"]
