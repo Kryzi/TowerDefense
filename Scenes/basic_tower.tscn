@@ -1,19 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://djh8nk3dgcjpd"]
+[gd_scene load_steps=6 format=3 uid="uid://djh8nk3dgcjpd"]
 
 [ext_resource type="Script" path="res://Scripts/basic_tower.gd" id="1_4dmiy"]
 [ext_resource type="Script" path="res://Scripts/attack.gd" id="2_4rerw"]
+[ext_resource type="Texture2D" uid="uid://bxjdce3y05nsm" path="res://icon.svg" id="2_a4q4g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe1ub"]
+radius = 28.2843
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lo4dh"]
+radius = 188.024
 
 [node name="BasicTower" type="StaticBody2D"]
 script = ExtResource("1_4dmiy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.453125, 0.453125)
+texture = ExtResource("2_a4q4g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BasicTowerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qe1ub")
 
 [node name="Attack" type="Area2D" parent="."]
 script = ExtResource("2_4rerw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+[node name="AttackCollision" type="CollisionShape2D" parent="Attack"]
+shape = SubResource("CircleShape2D_lo4dh")
 
 [node name="Cooldown" type="Timer" parent="Attack"]
 wait_time = 0.5
