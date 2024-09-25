@@ -18,7 +18,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Virus1" type="PathFollow2D" groups=["enemy"]]
+[node name="Virus1" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_5ncgj")
 
@@ -26,4 +26,4 @@ script = ExtResource("1_5ncgj")
 sprite_frames = SubResource("SpriteFrames_woiae")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.930064
+frame_progress = 0.392069
