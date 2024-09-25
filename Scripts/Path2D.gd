@@ -33,12 +33,8 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 				pass
 			
 			call_deferred("add_child", virus)
-		
 
-
-func _on_næste_runde_knap_pressed():
-
+func _on_hud_next_round():
 	if get_tree().get_nodes_in_group("enemy") == []:
 		currentRound += 1
 		waveDone = true
-	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyaeva2to770s"]
+[gd_scene load_steps=8 format=3 uid="uid://dyaeva2to770s"]
 
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
 [ext_resource type="PackedScene" uid="uid://djh8nk3dgcjpd" path="res://Scenes/basic_tower.tscn" id="2_b0sd5"]
-[ext_resource type="PackedScene" uid="uid://bfys168djkcgh" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
+[ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/HUD.tscn" id="3_ho7cv"]
+[ext_resource type="PackedScene" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
 [ext_resource type="Texture2D" uid="uid://cr1aqelrtduml" path="res://assets/Map 1.png" id="4_xfm3p"]
 
 [sub_resource type="Curve2D" id="Curve2D_8kyd7"]
@@ -30,12 +31,7 @@ scale = Vector2(1, 0.949591)
 curve = SubResource("Curve2D_8kyd7")
 script = ExtResource("1_4exjo")
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="NæsteRundeKnap" type="Button" parent="HUD"]
-offset_right = 38.0
-offset_bottom = 15.0
-text = "Next Round"
+[node name="HUD" parent="." instance=ExtResource("3_ho7cv")]
 
 [node name="BasicTower" parent="." instance=ExtResource("2_b0sd5")]
 position = Vector2(767, 412)
@@ -48,4 +44,4 @@ position = Vector2(576, 324)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_s3wt5")
 
-[connection signal="pressed" from="HUD/NæsteRundeKnap" to="Path2D" method="_on_næste_runde_knap_pressed"]
+[connection signal="next_round" from="HUD" to="Path2D" method="_on_hud_next_round"]
