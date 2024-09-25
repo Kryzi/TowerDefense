@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyaeva2to770s"]
+[gd_scene load_steps=5 format=3 uid="uid://dyaeva2to770s"]
 
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
 [ext_resource type="PackedScene" uid="uid://djh8nk3dgcjpd" path="res://Scenes/basic_tower.tscn" id="2_b0sd5"]
+[ext_resource type="PackedScene" uid="uid://bfys168djkcgh" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
 
 [sub_resource type="Curve2D" id="Curve2D_8kyd7"]
 _data = {
@@ -24,5 +25,7 @@ text = "Next Round"
 
 [node name="BasicTower" parent="." instance=ExtResource("2_b0sd5")]
 position = Vector2(847, 347)
+
+[node name="GameManager" parent="." instance=ExtResource("3_qrw8v")]
 
 [connection signal="pressed" from="HUD/NæsteRundeKnap" to="Path2D" method="_on_næste_runde_knap_pressed"]
