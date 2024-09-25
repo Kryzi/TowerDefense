@@ -24,5 +24,5 @@ func _on_body_exited(body):
 		#bar.take_damage(damage)
 
 func _on_cooldown_timeout() -> void:
-	if enemy in enemies_inside:
+	for enemy in enemies_inside:
 		var d = 1
