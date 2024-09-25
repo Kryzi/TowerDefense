@@ -4,6 +4,7 @@ const VIRUS_1 = preload("res://Scenes/virus_1.tscn")
 
 var currentRound = 1
 var waveDone = true
+var spawningDone = false
 
 func _ready():
 	pass
@@ -13,6 +14,8 @@ func _process(delta):
 		wave([1, 1], [2, 10], [0.1, 1])
 	elif currentRound == 2 and waveDone == true:
 		wave([1], [50], [0.1])
+	elif currentRound == 3 and waveDone == true:
+		wave([1, 1, 1], [3, 5, 10], [0.1, 0.3, 0.5])
 
 
 func wave(enemy : Array, amount : Array, TidMellem : Array):
@@ -32,8 +35,14 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 			
 			call_deferred("add_child", virus)
 		
-	startWave()
+	spawningDone = true
 
-func startWave():
-	currentRound += 1
-	waveDone = true
+
+
+
+
+func _on_næste_runde_knap_pressed():
+	if spawningDone == true:
+		currentRound += 1
+		waveDone = true
+		spawningDone = false

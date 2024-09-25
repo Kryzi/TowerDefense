@@ -13,3 +13,12 @@ point_count = 6
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_8kyd7")
 script = ExtResource("1_4exjo")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="NæsteRundeKnap" type="Button" parent="HUD"]
+offset_right = 38.0
+offset_bottom = 15.0
+text = "Next Round"
+
+[connection signal="pressed" from="HUD/NæsteRundeKnap" to="Path2D" method="_on_næste_runde_knap_pressed"]
