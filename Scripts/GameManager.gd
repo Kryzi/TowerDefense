@@ -7,11 +7,14 @@ var Health = 1
 var Currency = 50
 
 
-func _process(delta):
-	pass
+func _ready():
+	Restart.hide()
+	Quit.hide()
 
 @onready var MoneyText = get_tree().get_root().get_node("World/HUD/Money")
 @onready var HealthText = get_tree().get_root().get_node("World/HUD/Health")
+@onready var Restart = get_tree().get_root().get_node("World/HUD/Restart")
+@onready var Quit = get_tree().get_root().get_node("World/HUD/Quit")
 
 
 func damage(amount):
@@ -22,6 +25,8 @@ func damage(amount):
 
 func die():
 	print("i am dead")
+	Restart.show()
+	Quit.show()
 
 
 
