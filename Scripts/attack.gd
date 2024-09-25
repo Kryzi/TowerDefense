@@ -23,6 +23,17 @@ func _on_body_exited(body):
 		#var damage = 1
 		#bar.take_damage(damage)
 
+func shoot_projectile(target: Node2D):
+	var projectile = Bullet.instantiate()
+	get_parent().add_child(projectile)  # Add projectile to the scene
+	# Set projectile position and direction
+	projectile.global_position = global_position
+	var direction = (target.global_position - global_position).normalized()
+	projectile.velocity = direction  # Pass the direction to the projectile
+
+
+
+
 func _on_cooldown_timeout() -> void:
 	for enemy in enemies_inside:
 		var d = 1

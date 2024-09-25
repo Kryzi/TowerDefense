@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyaeva2to770s"]
+[gd_scene load_steps=4 format=3 uid="uid://dyaeva2to770s"]
 
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
+[ext_resource type="PackedScene" uid="uid://djh8nk3dgcjpd" path="res://Scenes/basic_tower.tscn" id="2_b0sd5"]
 
 [sub_resource type="Curve2D" id="Curve2D_8kyd7"]
 _data = {
@@ -20,5 +21,8 @@ script = ExtResource("1_4exjo")
 offset_right = 38.0
 offset_bottom = 15.0
 text = "Next Round"
+
+[node name="BasicTower" parent="." instance=ExtResource("2_b0sd5")]
+position = Vector2(847, 347)
 
 [connection signal="pressed" from="HUD/NæsteRundeKnap" to="Path2D" method="_on_næste_runde_knap_pressed"]
