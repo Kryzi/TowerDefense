@@ -7,9 +7,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_8kyd7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 290, 0, 0, 0, 0, 451, 290, 0, 0, 0, 0, 454, 150, 0, 0, 0, 0, 730, 150, 0, 0, 0, 0, 730, 290, 0, 0, 0, 0, 1200, 291)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 304, 0, 0, 0, 0, 225, 291, 13.4695, 81.9397, -13.4695, -81.9397, 320, 160, 66.1679, -0.820213, -66.1679, 0.820213, 224, 92, 13.4695, -101.022, -13.4695, 101.022, 148, 193, 0, 0, 0, 0, 287, 345.637, 0, 0, 0, 0, 514, 324.575, -28.9782, -37.1505, 28.9782, 37.1505, 613, 346.69, 39.6875, -42.4577, -39.6875, 42.4577, 622, 489.91, 53.5466, 35.1603, -53.5466, -35.1603, 508, 510.971, -20.8061, 36.7927, 20.8061, -36.7927, 489, 427.778, -11.774, 44.5568, 11.774, -44.5568, 516, 367.752, -17.818, 41.2805, 17.818, -41.2805, 491, 118.171, -61.3854, 3.54214, 61.3854, -3.54214, 625, 68.6756, -45.4084, -23.9095, 45.4084, 23.9095, 918, 119.224, 5.04538, -41.6202, -5.04538, 41.6202, 974, 202.417, 42.8857, 6.19875, -42.8857, -6.19875, 890, 238.222, 56.3401, -4.42768, -56.3401, 4.42768, 780, 195.046, 4.20448, -32.7648, -4.20448, 32.7648, 732, 240.328, -58.0483, -8.44883, 58.0483, 8.44883, 953, 419.353, 0, 0, 0, 0, 1174, 390.92)
 }
-point_count = 6
+point_count = 21
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3wt5"]
 animations = [{
@@ -25,6 +25,8 @@ animations = [{
 [node name="World" type="Node2D"]
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, 16.7863)
+scale = Vector2(1, 0.949591)
 curve = SubResource("Curve2D_8kyd7")
 script = ExtResource("1_4exjo")
 
@@ -36,12 +38,12 @@ offset_bottom = 15.0
 text = "Next Round"
 
 [node name="BasicTower" parent="." instance=ExtResource("2_b0sd5")]
-position = Vector2(847, 347)
+position = Vector2(767, 412)
 
 [node name="GameManager" parent="." instance=ExtResource("3_qrw8v")]
 
 [node name="Map (background)" type="AnimatedSprite2D" parent="."]
-z_index = -1
+z_index = -10
 position = Vector2(576, 324)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_s3wt5")
