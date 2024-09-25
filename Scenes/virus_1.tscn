@@ -1,24 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://clb85plprtw5g"]
 
 [ext_resource type="Script" path="res://Scripts/Virus1.gd" id="1_5ncgj"]
-[ext_resource type="Texture2D" uid="uid://cc2v5etd143jg" path="res://assets/pixil-frame-0 (1).png" id="2_sxpnw"]
-[ext_resource type="Texture2D" uid="uid://ds5pl4iohkkcn" path="res://assets/pixil-frame-0.png" id="3_yyt5t"]
+[ext_resource type="Texture2D" uid="uid://ds5pl4iohkkcn" path="res://assets/pixil-frame-0.png" id="2_csw64"]
+[ext_resource type="Texture2D" uid="uid://cc2v5etd143jg" path="res://assets/pixil-frame-0 (1).png" id="3_2jxxf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_woiae"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_sxpnw")
+"texture": ExtResource("2_csw64")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_yyt5t")
+"texture": ExtResource("3_2jxxf")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 3.0
+"speed": 2.0
 }]
 
-[node name="Virus1" type="PathFollow2D" groups=["enemy"]]
+[node name="Virus1" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_5ncgj")
 
@@ -26,4 +26,4 @@ script = ExtResource("1_5ncgj")
 sprite_frames = SubResource("SpriteFrames_woiae")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.304083
+frame_progress = 0.392069
