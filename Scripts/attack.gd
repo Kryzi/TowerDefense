@@ -6,10 +6,13 @@ var enemies_inside = []
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
+	connect("area_entered", Callable(self, "_on_area_entered"))
+	connect("area_exited", Callable(self, "_on_area_exited"))
 
 @onready var bullet = $Bullet
 
 func _on_body_entered(body):
+	print("works")
 	if body.is_in_group("enemy"):  
 		enemies_inside.append(body)  
 		print("Enemy entered: ", body.name)

@@ -38,5 +38,21 @@ grow_horizontal = 0
 text = "Basic Tower"
 metadata/_edit_use_anchors_ = true
 
+[node name="Money" type="RichTextLabel" parent="."]
+offset_left = 160.0
+offset_top = 24.0
+offset_right = 341.0
+offset_bottom = 173.0
+theme_override_font_sizes/normal_font_size = 30
+text = "RichText"
+
+[node name="Health" type="RichTextLabel" parent="."]
+offset_left = 390.0
+offset_top = 107.0
+offset_right = 636.0
+offset_bottom = 252.0
+theme_override_font_sizes/normal_font_size = 30
+text = "HealthyText"
+
 [connection signal="pressed" from="NæsteRundeKnap" to="." method="_on_næste_runde_knap_pressed"]
 [connection signal="pressed" from="BasicTowerBuyButton" to="." method="_on_basic_tower_buy_button_pressed"]
