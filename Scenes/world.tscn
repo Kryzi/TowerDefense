@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyaeva2to770s"]
+[gd_scene load_steps=9 format=3 uid="uid://dyaeva2to770s"]
 
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
 [ext_resource type="PackedScene" uid="uid://djh8nk3dgcjpd" path="res://Scenes/basic_tower.tscn" id="2_b0sd5"]
-[ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/HUD.tscn" id="3_ho7cv"]
-[ext_resource type="PackedScene" uid="uid://ccu0rb7r3xy2g" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
-[ext_resource type="Texture2D" uid="uid://cr1aqelrtduml" path="res://assets/Map 1.png" id="4_xfm3p"]
+[ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/hud.tscn" id="3_ho7cv"]
+[ext_resource type="PackedScene" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
+[ext_resource type="Texture2D" uid="uid://bw7bpiaex2ybs" path="res://assets/Map 1.png" id="4_xfm3p"]
+[ext_resource type="PackedScene" uid="uid://kx04eseqm5v" path="res://Scenes/tower.tscn" id="5_llehc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3wt5"]
 animations = [{
@@ -43,5 +44,9 @@ script = ExtResource("1_4exjo")
 position = Vector2(767, 412)
 
 [node name="GameManager" parent="." instance=ExtResource("3_qrw8v")]
+
+[node name="Tower" parent="." instance=ExtResource("5_llehc")]
+position = Vector2(700, 350)
+scale = Vector2(2, 2)
 
 [connection signal="next_round" from="HUD" to="Path2D" method="_on_hud_next_round"]
