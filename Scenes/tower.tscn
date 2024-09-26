@@ -40,6 +40,7 @@ shape = SubResource("CircleShape2D_i8mnh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_g6u5s")
 
 [node name="ShootingPoint" type="Marker2D" parent="AnimatedSprite2D"]

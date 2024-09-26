@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://djh8nk3dgcjpd"]
+[gd_scene load_steps=4 format=3 uid="uid://djh8nk3dgcjpd"]
 
-[ext_resource type="Script" path="res://Scripts/basic_tower.gd" id="1_4dmiy"]
 [ext_resource type="Script" path="res://Scripts/attack.gd" id="2_4rerw"]
 [ext_resource type="Texture2D" uid="uid://3twjdddkaohn" path="res://assets/VirusBigPack/png57.png" id="2_hcy63"]
-[ext_resource type="PackedScene" uid="uid://crwl6ck1i5o8s" path="res://Scenes/bullet.tscn" id="3_1dth8"]
+[ext_resource type="PackedScene" uid="uid://hxtgd2h3i635" path="res://Scenes/bullet.tscn" id="3_1dth8"]
 
 [node name="BasicTower" type="StaticBody2D"]
-script = ExtResource("1_4dmiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

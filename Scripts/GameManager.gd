@@ -8,13 +8,12 @@ var Currency = 50
 
 
 func _ready():
-	Restart.hide()
-	Quit.hide()
+	GameOverScreen.hide()
 
-@onready var MoneyText = get_tree().get_root().get_node("World/HUD/Money")
-@onready var HealthText = get_tree().get_root().get_node("World/HUD/Health")
-@onready var Restart = get_tree().get_root().get_node("World/HUD/Restart")
-@onready var Quit = get_tree().get_root().get_node("World/HUD/Quit")
+@onready var MoneyText = get_tree().get_root().get_node("World/HUD/PlayerInfo/Money")
+@onready var HealthText = get_tree().get_root().get_node("World/HUD/PlayerInfo/Health")
+@onready var GameOverScreen = get_tree().get_root().get_node("World/HUD/GameOverScreen")
+@onready var Quit = get_tree().get_root().get_node("World/HUD/GameOverScreen/Quit")
 
 
 func damage(amount):
@@ -26,8 +25,7 @@ func damage(amount):
 func die():
 	get_tree().paused = true
 	print("i am dead")
-	Restart.show()
-	Quit.show()
+	GameOverScreen.show()
 
 
 
