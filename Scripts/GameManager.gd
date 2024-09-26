@@ -1,19 +1,20 @@
-extends Node2D
+extends Node
 
 const BASICTOWER = preload("res://Scenes/tower.tscn")
-@onready var world = get_parent()
 
 var Health = 1
 var Currency = 50
 
+@export var World: Node2D
+
+@onready var MoneyText = get_tree().get_root().get_node("World/HUD/%Money")
+@onready var HealthText = get_tree().get_root().get_node("World/HUD/%Health")
+@onready var GameOverScreen = get_tree().get_root().get_node("World/HUD/GameOverScreen")
+@onready var Quit = get_tree().get_root().get_node("World/HUD/GameOverScreen/Quit")
 
 func _ready():
 	GameOverScreen.hide()
 
-@onready var MoneyText = get_tree().get_root().get_node("World/HUD/PlayerInfo/Money")
-@onready var HealthText = get_tree().get_root().get_node("World/HUD/PlayerInfo/Health")
-@onready var GameOverScreen = get_tree().get_root().get_node("World/HUD/GameOverScreen")
-@onready var Quit = get_tree().get_root().get_node("World/HUD/GameOverScreen/Quit")
 
 
 func damage(amount):
@@ -32,7 +33,7 @@ func die():
 
 func _on_hud_buy_basic_tower():
 	var basicTower = BASICTOWER.instantiate()
-	world.call_deferred("add_child", basicTower)
+	World.call_deferred("add_child", basicTower)
 		
 	
 	

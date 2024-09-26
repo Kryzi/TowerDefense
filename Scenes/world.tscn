@@ -39,7 +39,8 @@ script = ExtResource("1_4exjo")
 
 [node name="HUD" parent="." instance=ExtResource("3_ho7cv")]
 
-[node name="GameManager" parent="." instance=ExtResource("3_qrw8v")]
+[node name="GameManager" parent="." node_paths=PackedStringArray("World") instance=ExtResource("3_qrw8v")]
+World = NodePath("..")
 
 [node name="Tower" parent="." instance=ExtResource("5_llehc")]
 position = Vector2(700, 350)
