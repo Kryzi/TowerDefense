@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7n06b2bm7tnx"]
+[gd_scene load_steps=6 format=3 uid="uid://0jovu4akyx3u"]
 
 [ext_resource type="Script" path="res://Scripts/virus_2.gd" id="1_ckt52"]
 [ext_resource type="Texture2D" uid="uid://b6156b161p04" path="res://assets/Virusser/Virus_2.Frame_1.png" id="1_jeww0"]
