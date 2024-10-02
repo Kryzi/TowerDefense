@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Tower Defense"
+
 [global_group]
 
 enemy="ting der er skal skydes"
