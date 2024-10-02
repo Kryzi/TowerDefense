@@ -22,3 +22,4 @@ func takeDamage(amount):
 
 func death():
 	queue_free()
+	get_node("/root/World/GameManager").Currency += 1
