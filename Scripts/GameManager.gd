@@ -5,6 +5,8 @@ const BASICTOWER = preload("res://Scenes/tower.tscn")
 var Health = 1
 var Currency = 50
 
+var priceTower1 = 25
+
 var placingtower = false
 
 @export var World: Node2D
@@ -33,15 +35,12 @@ func die():
 var basicTower
 
 func _on_hud_buy_basic_tower():
-	print("vi er her")
-	basicTower = BASICTOWER.instantiate()
-	World.call_deferred("add_child", basicTower)
-	placingtower = true
-	
-	
-	
-	
-	
+	if Currency >= priceTower1:
+		Currency -= priceTower1
+		
+		basicTower = BASICTOWER.instantiate()
+		World.call_deferred("add_child", basicTower)
+		placingtower = true
 
 func _physics_process(delta: float) -> void:
 	MoneyText.text = "Money = " + str(Currency)
