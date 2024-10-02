@@ -19,8 +19,7 @@ var placingtower = false
 func _ready():
 	GameOverScreen.hide()
 
-func getCurrency():
-	Currency += 1
+
 
 func damage(amount):
 	Health -= amount

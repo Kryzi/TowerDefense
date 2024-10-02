@@ -8,7 +8,6 @@ var health = 1
 func _ready():
 	Path = get_parent()
 	add_to_group("enemy")
-@onready var Gamer = get_node("/root/World/GameManager")
 
 func _process(delta):
 	progress += speed * delta
@@ -18,7 +17,6 @@ func _process(delta):
 
 func takeDamage(amount):
 	health -= amount
-	Gamer.getCurrency()
 	if health <= 0:
 		death()
 
