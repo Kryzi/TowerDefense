@@ -2,13 +2,16 @@ extends Area2D
 
 const BULLET = preload("res://Scenes/bullet_1.tscn")
 var enemies_in_range 
+var placed = false
 
 func _physics_process(delta):
-	enemies_in_range = get_overlapping_bodies() # Finder enemys som er inde i collisionshape
-	if enemies_in_range.size() > 0: 
-		var target_enemy = enemies_in_range.front()
-		look_at(target_enemy.global_position)
-		
+	if placed == true:
+		enemies_in_range = get_overlapping_bodies() # Finder enemys som er inde i collisionshape
+		if enemies_in_range.size() > 0: 
+			var target_enemy = enemies_in_range.front()
+			look_at(target_enemy.global_position)
+			rotate(PI/2)
+
 func Shoot():
 	
 	var newBULLET = BULLET.instantiate()
@@ -20,7 +23,7 @@ func Shoot():
 
 
 func _on_timer_timeout():
-	if enemies_in_range != []:
+	if enemies_in_range != [] and placed == true:
 		Shoot()
 	
 	

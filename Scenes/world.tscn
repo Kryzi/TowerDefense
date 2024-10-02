@@ -46,4 +46,5 @@ World = NodePath("..")
 position = Vector2(700, 350)
 scale = Vector2(2, 2)
 
+[connection signal="buy_basic_tower" from="HUD" to="GameManager" method="_on_hud_buy_basic_tower"]
 [connection signal="next_round" from="HUD" to="Path2D" method="_on_hud_next_round"]

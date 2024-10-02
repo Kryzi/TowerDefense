@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgo5wnrwmlo4o" path="res://assets/Tower 1.4.png" id="5_cpnm6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8mnh"]
-radius = 256.0
+radius = 169.027
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g6u5s"]
 animations = [{
@@ -30,7 +30,6 @@ animations = [{
 }]
 
 [node name="Tower" type="Area2D"]
-scale = Vector2(0.5, 0.5)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_prn0m")
@@ -40,7 +39,6 @@ shape = SubResource("CircleShape2D_i8mnh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
-rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_g6u5s")
 
 [node name="ShootingPoint" type="Marker2D" parent="AnimatedSprite2D"]
