@@ -1,5 +1,5 @@
 extends Area2D
-var damage = 1000
+var damage = 1
 var travelled_distance = 0
 var pierce = 1
 
