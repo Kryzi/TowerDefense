@@ -46,7 +46,7 @@ func _on_hud_buy_basic_tower():
 var shapeArray: PackedVector2Array
 var polygon
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	MoneyText.text = "Money = " + str(Currency)
 	HealthText.text = "Health = "+ str(Health)
 	

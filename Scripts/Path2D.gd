@@ -8,7 +8,7 @@ var waveDone = true
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if currentRound == 1 and waveDone == true:
 		wave([1, 1], [2, 10], [0.1, 1])
 	elif currentRound == 2 and waveDone == true:

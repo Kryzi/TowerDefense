@@ -4,7 +4,7 @@ const BULLET = preload("res://Scenes/bullet_1.tscn")
 var enemies_in_range 
 var placed = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if placed == true:
 		enemies_in_range = get_overlapping_bodies() # Finder enemys som er inde i collisionshape
 		if enemies_in_range.size() > 0: 
