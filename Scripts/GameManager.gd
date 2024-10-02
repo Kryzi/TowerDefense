@@ -42,13 +42,33 @@ func _on_hud_buy_basic_tower():
 		World.call_deferred("add_child", basicTower)
 		placingtower = true
 
+
+var shapeArray: PackedVector2Array
+var polygon
+
 func _physics_process(delta: float) -> void:
 	MoneyText.text = "Money = " + str(Currency)
 	HealthText.text = "Health = "+ str(Health)
 	
 	if placingtower == true:
 		basicTower.global_position = get_global_mouse_position()
+		
+		polygon = basicTower.get_child(0).get_child(0)
+		polygon.visible = true
+		var radius = basicTower.get_child(0).shape.radius
+		var sider = 20
+		var angle = (2*PI)/sider
+		shapeArray.clear()
+		for n in range(sider):
+			var v = angle * n
+			var point = Vector2(0, radius).rotated(v)
+			
+			shapeArray.append(point)
+		
+		polygon.polygon = shapeArray
+	
 	if Input.is_action_just_pressed("left_mouse_click") and placingtower == true:
 		placingtower = false
 		basicTower.placed = true
+		polygon.visible = false
 		
