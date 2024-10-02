@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cej6oxixow36c"]
+[gd_scene load_steps=8 format=3 uid="uid://kx04eseqm5v"]
 
 [ext_resource type="Script" path="res://Scripts/Tower1.gd" id="1_prn0m"]
 [ext_resource type="Texture2D" uid="uid://cpa31glna15hy" path="res://assets/Tower 1.1.png" id="2_vcdjs"]
@@ -13,19 +13,19 @@ radius = 169.027
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vcdjs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_5s1ww")
+"texture": ExtResource("5_cpnm6")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_c0hk5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_cpnm6")
+"texture": ExtResource("3_5s1ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vcdjs")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"Shoot",
 "speed": 5.0
 }]
 
@@ -40,6 +40,7 @@ shape = SubResource("CircleShape2D_i8mnh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_g6u5s")
+animation = &"Shoot"
 
 [node name="ShootingPoint" type="Marker2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -10)

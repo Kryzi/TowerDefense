@@ -13,7 +13,7 @@ func _physics_process(delta):
 			rotate(PI/2)
 
 func Shoot():
-	
+	$AnimatedSprite2D.play("Shoot")
 	var newBULLET = BULLET.instantiate()
 	
 	newBULLET.global_position = $AnimatedSprite2D/ShootingPoint.global_position
