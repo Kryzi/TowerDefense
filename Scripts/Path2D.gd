@@ -17,9 +17,9 @@ func _process(_delta):
 		wave([1], [50], [0.1])
 	elif currentRound == 3 and waveDone == true:
 		wave([1, 2, 2], [3, 5, 10], [0.1, 0.3, 0.5])
-	elif currentRound == 3 and waveDone == true:
+	elif currentRound == 4 and waveDone == true:
 		wave([3], [8], [0.5])
-	elif currentRound == 3 and waveDone == true:
+	elif currentRound == 5 and waveDone == true:
 		wave([1, 2, 3], [3, 3, 3], [1, 1, 1])
 
 
