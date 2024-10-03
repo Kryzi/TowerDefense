@@ -27,3 +27,12 @@ func _on_timer_timeout():
 		Shoot()
 	
 	
+
+
+
+func _on_spawn_check_area_entered(area):
+	get_node("/root/World/GameManager").canPlaceFalse()
+
+
+func _on_spawn_check_area_exited(area):
+	get_node("/root/World/GameManager").canPlaceTrue()

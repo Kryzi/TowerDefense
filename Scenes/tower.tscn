@@ -41,11 +41,12 @@ script = ExtResource("1_prn0m")
 shape = SubResource("CircleShape2D_i8mnh")
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
-color = Color(0.454524, 0.454524, 0.454524, 0.235294)
+color = Color(0.454902, 0.454902, 0.454902, 0.392157)
 
 [node name="SpawnCheck" type="Area2D" parent="."]
 
 [node name="Hitbox" type="CollisionShape2D" parent="SpawnCheck"]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_xgu08")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -61,4 +62,5 @@ process_callback = 0
 autostart = true
 
 [connection signal="area_entered" from="SpawnCheck" to="." method="_on_spawn_check_area_entered"]
+[connection signal="area_exited" from="SpawnCheck" to="." method="_on_spawn_check_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

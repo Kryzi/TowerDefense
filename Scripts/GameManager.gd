@@ -73,10 +73,19 @@ func _physics_process(delta: float) -> void:
 		basicTower.placed = true
 		polygon.visible = false
 
-
-func _on_area_2d_area_entered(area):
+func canPlaceFalse():
 	canPlace = false
+	polygon.color = Color8(240, 42, 42, 100)
 
-
-func _on_area_2d_area_exited(area):
+func canPlaceTrue():
 	canPlace = true
+	polygon.color = Color8(116, 116, 116, 100)
+
+
+func _on_area_2d_area_entered(_area):
+	#canPlaceFalse()
+	pass
+
+func _on_area_2d_area_exited(_area):
+	#canPlaceTrue()
+	pass
