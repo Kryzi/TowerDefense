@@ -30,6 +30,7 @@ collision_layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_rh1c2")
+autoplay = "default"
 frame_progress = 0.764757
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]

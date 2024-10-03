@@ -22,6 +22,7 @@ animations = [{
 radius = 17.2627
 
 [node name="Virus3" type="PathFollow2D"]
+rotates = false
 script = ExtResource("1_2ghuk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -29,7 +30,9 @@ collision_layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_pjomc")
-frame_progress = 0.0384685
+autoplay = "default"
+frame = 1
+frame_progress = 0.698325
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_jhg88")
