@@ -3,7 +3,7 @@ extends Node2D
 const BASICTOWER = preload("res://Scenes/tower.tscn")
 
 var Health = 1
-var Currency = 50
+var Currency = 500
 
 var priceTower1 = 25
 

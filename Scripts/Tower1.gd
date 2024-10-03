@@ -1,7 +1,7 @@
 extends Area2D
 
 const BULLET = preload("res://Scenes/bullet_1.tscn")
-var enemies_in_range 
+var enemies_in_range
 var placed = false
 
 func _physics_process(_delta):
@@ -10,7 +10,6 @@ func _physics_process(_delta):
 		if enemies_in_range.size() > 0: 
 			var target_enemy = enemies_in_range.front()
 			look_at(target_enemy.global_position)
-			rotate(PI/2)
 
 func Shoot():
 	$AnimatedSprite2D.play("Shoot")
@@ -33,4 +32,9 @@ func _on_spawn_check_area_entered(_area):
 
 
 func _on_spawn_check_area_exited(_area):
-	get_node("/root/World/GameManager").canPlaceTrue()
+	var spawnCheck = %SpawnCheck
+	var tower_collision_count = spawnCheck.get_overlapping_areas().size()
+	if tower_collision_count == 0 and not placed:
+		get_node("/root/World/GameManager").canPlaceTrue()
+		
+
