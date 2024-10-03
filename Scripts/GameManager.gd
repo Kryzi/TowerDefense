@@ -46,7 +46,7 @@ func _on_hud_buy_basic_tower():
 		World.call_deferred("add_child", basicTower)
 		placingtower = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	MoneyText.text = "Money = " + str(Currency)
 	HealthText.text = "Health = "+ str(Health)
 	
@@ -81,11 +81,3 @@ func canPlaceTrue():
 	canPlace = true
 	polygon.color = Color8(116, 116, 116, 100)
 
-
-func _on_area_2d_area_entered(_area):
-	#canPlaceFalse()
-	pass
-
-func _on_area_2d_area_exited(_area):
-	#canPlaceTrue()
-	pass

@@ -28,11 +28,9 @@ func _on_timer_timeout():
 	
 	
 
-
-
-func _on_spawn_check_area_entered(area):
+func _on_spawn_check_area_entered(_area):
 	get_node("/root/World/GameManager").canPlaceFalse()
 
 
-func _on_spawn_check_area_exited(area):
+func _on_spawn_check_area_exited(_area):
 	get_node("/root/World/GameManager").canPlaceTrue()
