@@ -49,5 +49,3 @@ polygon = PackedVector2Array(-2, 341.425, 173, 321.416, 244, 367.752, 272, 380.3
 
 [connection signal="buy_basic_tower" from="HUD" to="GameManager" method="_on_hud_buy_basic_tower"]
 [connection signal="next_round" from="HUD" to="Path2D" method="_on_hud_next_round"]
-[connection signal="area_entered" from="Banen" to="GameManager" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Banen" to="GameManager" method="_on_area_2d_area_exited"]
