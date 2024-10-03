@@ -51,6 +51,7 @@ func _physics_process(_delta: float) -> void:
 	HealthText.text = "Health = "+ str(Health)
 	
 	if placingtower == true:
+		
 		basicTower.global_position = get_global_mouse_position()
 		
 		
