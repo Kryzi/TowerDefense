@@ -16,9 +16,9 @@ func _ready():
 
 func _physics_process(delta):
 		if GameManager.Currency >= UpgradePriceTower3:
-			$SpawnCheck/Hitbox/HitboxPolygon.show()
+			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.show()
 		else:
-			$SpawnCheck/Hitbox/HitboxPolygon.hide()
+			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.hide()
 
 func popup():
 	var text = FLOATINGTEXT.instantiate()

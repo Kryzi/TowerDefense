@@ -16,9 +16,9 @@ func _physics_process(_delta):
 			rotate(PI/2)
 		
 		if GameManager.Currency >= UpgradePriceTower2:
-			$SpawnCheck/Hitbox/HitboxPolygon.show()
+			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.show()
 		else:
-			$SpawnCheck/Hitbox/HitboxPolygon.hide()
+			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.hide()
 
 func Shoot():
 	$AnimatedSprite2D.play("Shoot")
