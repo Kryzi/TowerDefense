@@ -19,8 +19,6 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.name == "Tower":
 		return
-	if body.name == "TileMap":
-		queue_free()
 	else:
 		body.get_parent().takeDamage(damage)
 		pierce -= 1

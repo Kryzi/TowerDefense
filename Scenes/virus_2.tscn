@@ -22,6 +22,7 @@ animations = [{
 radius = 21.0
 
 [node name="Virus2" type="PathFollow2D"]
+rotates = false
 script = ExtResource("1_ckt52")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -29,6 +30,7 @@ collision_layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_g2aph")
+autoplay = "default"
 frame = 1
 frame_progress = 0.136449
 
