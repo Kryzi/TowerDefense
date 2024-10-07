@@ -3,6 +3,9 @@ extends Area2D
 const BULLET = preload("res://Scenes/bullet_1.tscn")
 var enemies_in_range
 var placed = false
+@onready var GameManager = get_node("/root/World/GameManager")
+
+var UpgradePriceTower1 = 10
 
 func _physics_process(_delta):
 	if placed == true:
@@ -10,6 +13,11 @@ func _physics_process(_delta):
 		if enemies_in_range.size() > 0: 
 			var target_enemy = enemies_in_range.front()
 			look_at(target_enemy.global_position)
+		
+		if GameManager.Currency >= UpgradePriceTower1:
+			$SpawnCheck/Hitbox/HitboxPolygon.show()
+		else:
+			$SpawnCheck/Hitbox/HitboxPolygon.hide()
 
 func Shoot():
 	$AnimatedSprite2D.play("Shoot")
@@ -28,13 +36,21 @@ func _on_timer_timeout():
 	
 
 func _on_spawn_check_area_entered(_area):
-	get_node("/root/World/GameManager").canPlaceFalse()
+	GameManager.canPlaceFalse()
 
 
 func _on_spawn_check_area_exited(_area):
 	var spawnCheck = %SpawnCheck
 	var tower_collision_count = spawnCheck.get_overlapping_areas().size()
 	if tower_collision_count == 0 and not placed:
-		get_node("/root/World/GameManager").canPlaceTrue()
-		
+		GameManager.canPlaceTrue()
 
+
+func _on_spawn_check_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and placed:
+			if GameManager.Currency >= UpgradePriceTower1:
+					GameManager.Currency -= UpgradePriceTower1
+					
+					UpgradePriceTower1 += 10
+					$Timer.wait_time *= 0.7

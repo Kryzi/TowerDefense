@@ -60,6 +60,11 @@ unique_name_in_owner = true
 position = Vector2(-0.5, 0)
 shape = SubResource("CircleShape2D_2qv2n")
 
+[node name="HitboxPolygon" type="Polygon2D" parent="CollisionShape2D/SpawnCheck/Hitbox"]
+visible = false
+color = Color(0.454902, 1, 0.454902, 0.392157)
+polygon = PackedVector2Array(-16, -16, -16, 0, 0, 0, 0, -16)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_ablwo")
@@ -77,5 +82,5 @@ position = Vector2(-6, -22)
 
 [connection signal="area_entered" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_area_entered"]
 [connection signal="area_exited" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_area_exited"]
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="input_event" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

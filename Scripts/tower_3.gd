@@ -4,12 +4,21 @@ var placed = false
 var CurrencyAmount = 5
 var CurrencyPerRunde = 5
 var CurrencyTilbage
+@onready var GameManager = get_node("/root/World/GameManager")
+
+var UpgradePriceTower3 = 5
 
 const FLOATINGTEXT = preload("res://Scenes/floatingtext.tscn")
 
 func _ready():
 	$AnimatedSprite2D.frame = 0
 	CurrencyTilbage = CurrencyPerRunde
+
+func _physics_process(delta):
+		if GameManager.Currency >= UpgradePriceTower3:
+			$SpawnCheck/Hitbox/HitboxPolygon.show()
+		else:
+			$SpawnCheck/Hitbox/HitboxPolygon.hide()
 
 func popup():
 	var text = FLOATINGTEXT.instantiate()
@@ -55,4 +64,12 @@ func _on_timer_timeout():
 	if placed == true:
 		getMoney()
 
+func _on_spawn_check_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and placed:
+			if GameManager.Currency >= UpgradePriceTower3:
+					GameManager.Currency -= UpgradePriceTower3
+					
+					UpgradePriceTower3 += 10
+					CurrencyAmount *= 2
 

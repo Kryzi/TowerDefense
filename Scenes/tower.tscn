@@ -45,10 +45,16 @@ color = Color(0.454902, 0.454902, 0.454902, 0.392157)
 
 [node name="SpawnCheck" type="Area2D" parent="."]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 
 [node name="Hitbox" type="CollisionShape2D" parent="SpawnCheck"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_xgu08")
+
+[node name="HitboxPolygon" type="Polygon2D" parent="SpawnCheck/Hitbox"]
+visible = false
+color = Color(0.454902, 1, 0.454902, 0.392157)
+polygon = PackedVector2Array(-16, -16, -16, 0, 0, 0, 0, -16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
@@ -60,9 +66,11 @@ animation = &"Shoot"
 position = Vector2(0, -10)
 
 [node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
 process_callback = 0
 autostart = true
 
 [connection signal="area_entered" from="SpawnCheck" to="." method="_on_spawn_check_area_entered"]
 [connection signal="area_exited" from="SpawnCheck" to="." method="_on_spawn_check_area_exited"]
+[connection signal="input_event" from="SpawnCheck" to="." method="_on_spawn_check_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
