@@ -5,7 +5,7 @@ const SLOWTOWER = preload("res://Scenes/tower_2.tscn")
 const TOWER_3 = preload("res://Scenes/tower_3.tscn")
 
 var Health = 1
-var Currency = 5000
+var Currency = 100
 
 var tower
 

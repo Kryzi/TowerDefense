@@ -1,7 +1,7 @@
 extends Area2D
 
 var placed = false
-var CurrencyAmount = 69
+var CurrencyAmount = 2
 var CurrencyPerRunde = 5
 var CurrencyTilbage
 
@@ -26,17 +26,17 @@ func _get_direction():
 	return Vector2(randf_range(-1, 1), -randf()) * 25
  
 func getMoney():
-	if placed == true and get_tree().get_nodes_in_group("enemy") != [] and CurrencyTilbage > 0:
+	if  get_tree().get_nodes_in_group("enemy") != [] and CurrencyTilbage > 0:
 		$AnimatedSprite2D.play("MoneyGeterate")
 		get_node("/root/World/GameManager").Currency += CurrencyAmount
 		CurrencyTilbage -= 1
 		
 		popup()
 		randomize()
-	elif placed == true and get_tree().get_nodes_in_group("enemy") == []:
+	elif get_tree().get_nodes_in_group("enemy") == []:
 		$AnimatedSprite2D.stop()
 		CurrencyTilbage = CurrencyPerRunde
-	elif  placed == true and CurrencyTilbage == 0:
+	elif CurrencyTilbage == 0:
 		$AnimatedSprite2D.stop()
 	
 
@@ -51,6 +51,8 @@ func _on_spawn_check_area_exited(_area):
 		get_node("/root/World/GameManager").canPlaceTrue()
 		
 
-
 func _on_timer_timeout():
-	getMoney()
+	if placed == true:
+		getMoney()
+
+
