@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ut3fve6fun02"]
+
+[ext_resource type="Script" path="res://Scripts/tower_2.gd" id="1_i7r06"]
+[ext_resource type="Texture2D" uid="uid://cq26o8p7o1d4p" path="res://assets/Tower 2.4.png" id="2_tpdp1"]
+[ext_resource type="Texture2D" uid="uid://ctcqm1mh3jatu" path="res://assets/Tower 2.3.png" id="3_wvp7w"]
+[ext_resource type="Texture2D" uid="uid://dij2om23hwxnr" path="res://assets/Tower 2.2.png" id="4_8058m"]
+[ext_resource type="Texture2D" uid="uid://clh30fpqvupkl" path="res://assets/Tower 2.1.png" id="5_r6k06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aryud"]
+radius = 112.285
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4stf4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tpdp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wvp7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8058m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r6k06")
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 5.0
+}]
+
+[node name="tower2" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_i7r06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aryud")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_4stf4")
+animation = &"Shoot"
+
+[node name="ShootingPoint" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -6)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
