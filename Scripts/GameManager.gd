@@ -9,9 +9,9 @@ var Currency = 100
 
 var tower
 
-var priceTower1 = 25
-var priceTower2 = 35
-var priceTower3 = 75
+var priceTower1 = 253
+var priceTower2 = 351
+var priceTower3 = 7501
 
 var canPlace = false
 var placingtower = false
@@ -25,6 +25,9 @@ var placingtower = false
 
 func _ready():
 	GameOverScreen.hide()
+	get_node("/root/World/HUD/TowerShop/MarginContainer/Node/Label").text = str(priceTower1)
+	get_node("/root/World/HUD/TowerShop/MarginContainer/Node/Label2").text  = str(priceTower2)
+	get_node("/root/World/HUD/TowerShop/MarginContainer/Node/Label3").text = str(priceTower3)
 
 func damage(amount):
 	Health -= amount
