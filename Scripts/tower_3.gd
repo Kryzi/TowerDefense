@@ -21,9 +21,10 @@ func _get_direction():
 	return Vector2(randf_range(-1, 1), -randf()) * 16
  
 func getMoney():
-	get_node("/root/World/GameManager").Currency += CurrentcyAmount
-	popup()
-	randomize()
+	if placed == false:
+		get_node("/root/World/GameManager").Currency += CurrentcyAmount
+		popup()
+		randomize()
 
 func _on_spawn_check_area_entered(_area):
 	get_node("/root/World/GameManager").canPlaceFalse()
