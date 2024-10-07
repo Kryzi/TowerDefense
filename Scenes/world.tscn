@@ -52,5 +52,6 @@ polygon = PackedVector2Array(-2, 341.425, 173, 321.416, 244, 367.752, 272, 380.3
 position = Vector2(156, 439)
 
 [connection signal="buy_basic_tower" from="HUD" to="GameManager" method="_on_hud_buy_basic_tower"]
+[connection signal="buy_money_tower" from="HUD" to="GameManager" method="_on_hud_buy_money_tower"]
 [connection signal="buy_slow_tower" from="HUD" to="GameManager" method="_on_hud_buy_slow_tower"]
 [connection signal="next_round" from="HUD" to="Path2D" method="_on_hud_next_round"]

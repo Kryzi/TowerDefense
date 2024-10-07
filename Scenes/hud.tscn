@@ -60,7 +60,7 @@ theme_override_font_sizes/font_size = 12
 text = "Slow Tower"
 metadata/_edit_use_anchors_ = true
 
-[node name="SlowTowerBuyButton2" type="Button" parent="TowerShop/MarginContainer/ButtonContainer"]
+[node name="MoneyTowerBuyButton" type="Button" parent="TowerShop/MarginContainer/ButtonContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -165,7 +165,7 @@ icon_alignment = 1
 
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/BasicTowerBuyButton" to="." method="_on_basic_tower_buy_button_pressed"]
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/SlowTowerBuyButton" to="." method="_on_slow_tower_buy_button_pressed"]
-[connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/SlowTowerBuyButton2" to="." method="_on_slow_tower_buy_button_2_pressed"]
+[connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/MoneyTowerBuyButton" to="." method="_on_money_tower_buy_button_pressed"]
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/NæsteRundeKnap" to="." method="_on_næste_runde_knap_pressed"]
 [connection signal="pressed" from="GameOverScreen/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOverScreen/Quit" to="." method="_on_quit_pressed"]

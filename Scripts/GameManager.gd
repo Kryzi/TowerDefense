@@ -2,12 +2,14 @@ extends Node2D
 
 const BASICTOWER = preload("res://Scenes/tower.tscn")
 const SLOWTOWER = preload("res://Scenes/tower_2.tscn")
+const TOWER_3 = preload("res://Scenes/tower_3.tscn")
 
 var Health = 1
 var Currency = 5000
 
 var priceTower1 = 25
 var priceTower2 = 35
+var priceTower3 = 75
 
 var canPlace = true
 var placingtower = false
@@ -91,3 +93,12 @@ func canPlaceFalse():
 func canPlaceTrue():
 	canPlace = true
 	polygon.color = Color8(116, 116, 116, 100)
+
+
+func _on_hud_buy_money_tower():
+	if Currency >= priceTower3:
+		Currency -= priceTower3
+		
+		tower = TOWER_3.instantiate()
+		World.call_deferred("add_child", tower)
+		placingtower = true
