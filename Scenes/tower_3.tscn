@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1g57gcc7omwd"]
+
+[ext_resource type="Texture2D" uid="uid://bxjdce3y05nsm" path="res://icon.svg" id="1_vrbgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aryud"]
+radius = 112.285
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qv2n"]
+radius = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ablwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vrbgy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="tower3" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aryud")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+color = Color(0.454902, 0.454902, 0.454902, 0.392157)
+
+[node name="SpawnCheck" type="Area2D" parent="CollisionShape2D"]
+unique_name_in_owner = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="CollisionShape2D/SpawnCheck"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_2qv2n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_ablwo")
+
+[node name="ShootingPoint" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -6)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
+
+[connection signal="area_entered" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_area_entered"]
+[connection signal="area_exited" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
