@@ -12,7 +12,7 @@ func _ready():
 
 func _process(_delta):
 	if currentRound == 1 and waveDone == true:
-		wave([3, 1], [2, 10], [0.1, 1])
+		wave([1, 1], [2, 10], [0.1, 1])
 	elif currentRound == 2 and waveDone == true:
 		wave([1], [50], [0.1])
 	elif currentRound == 3 and waveDone == true:
