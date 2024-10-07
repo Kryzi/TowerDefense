@@ -1,11 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://coeo0fjjf1oxv"]
+[gd_scene load_steps=8 format=3 uid="uid://dc3oeyo6082eb"]
 
 [ext_resource type="Script" path="res://Scripts/virus_3.gd" id="1_2ghuk"]
 [ext_resource type="Texture2D" uid="uid://coiqo23loxin3" path="res://assets/Virusser/Virus_3.Frame_1.png" id="1_3ethm"]
+[ext_resource type="Texture2D" uid="uid://pj2cmuf1lb3k" path="res://assets/Virusser/Virus_3.Frame_1.gunk.png" id="2_jmegk"]
 [ext_resource type="Texture2D" uid="uid://stwgcefyxncd" path="res://assets/Virusser/Virus_3.Frame_2.png" id="2_utp6m"]
+[ext_resource type="Texture2D" uid="uid://cbx5jldo7fxvt" path="res://assets/Virusser/Virus_3.Frame_2.gunk.png" id="3_eix0t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pjomc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jmegk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eix0t")
+}],
+"loop": true,
+"name": &"Gunk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_3ethm")
@@ -30,9 +43,8 @@ collision_layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_pjomc")
+animation = &"Gunk"
 autoplay = "default"
-frame = 1
-frame_progress = 0.698325
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_jhg88")

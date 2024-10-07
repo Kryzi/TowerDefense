@@ -11,6 +11,10 @@ func _ready():
 
 func _process(delta):
 	progress += speed * delta
+	if speed <= 150:
+		$CharacterBody2D/AnimatedSprite2D.play("Gunk")
+	else:
+		$CharacterBody2D/AnimatedSprite2D. play("default")
 	if progress_ratio >= 0.99: # Vi har nået slutningen af banen
 		get_node("/root/World/GameManager").damage(damage)
 		queue_free()

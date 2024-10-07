@@ -23,7 +23,7 @@ func _on_body_entered(body):
 	else:
 		body.get_parent().takeDamage(damage)
 		pierce -= 1
-		body.get_parent().speed = 50
+		body.get_parent().speed -= 50
 		
 	
 	if pierce >= 0:
