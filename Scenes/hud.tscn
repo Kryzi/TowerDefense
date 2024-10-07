@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://8snbvs27wihv"]
+[gd_scene load_steps=9 format=3 uid="uid://8snbvs27wihv"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_4qxoa"]
 [ext_resource type="Texture2D" uid="uid://6vb3g1gm7t7p" path="res://assets/UI/reset_knap.png" id="2_ki0pt"]
 [ext_resource type="Texture2D" uid="uid://1fyelxjcdb64" path="res://assets/UI/gameover_text.png" id="2_pfxd5"]
+[ext_resource type="Texture2D" uid="uid://bfrqi1fe1ii4c" path="res://assets/UI/tower1_knap.png" id="2_uetmu"]
 [ext_resource type="Texture2D" uid="uid://cblhcy2dulb57" path="res://assets/UI/quit_knap.png" id="3_47wpd"]
+[ext_resource type="Texture2D" uid="uid://cyq40l8vya5k" path="res://assets/UI/tower2_knap.png" id="3_nysjs"]
+[ext_resource type="Texture2D" uid="uid://bdsf8rhl73qkd" path="res://assets/UI/tower3_knap.png" id="4_wuk7h"]
+[ext_resource type="Texture2D" uid="uid://dako4uc012fsc" path="res://assets/UI/nextround_knap.png" id="5_7n8xs"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_4qxoa")
@@ -40,33 +44,45 @@ theme_override_constants/margin_bottom = 20
 
 [node name="ButtonContainer" type="VBoxContainer" parent="TowerShop/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 90
+theme_override_constants/separation = 50
 
 [node name="BasicTowerBuyButton" type="Button" parent="TowerShop/MarginContainer/ButtonContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.498039, 0.498039, 0.498039, 1)
 theme_override_font_sizes/font_size = 12
-text = "Basic Tower"
+icon = ExtResource("2_uetmu")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="SlowTowerBuyButton" type="Button" parent="TowerShop/MarginContainer/ButtonContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.498039, 0.498039, 0.498039, 1)
 theme_override_font_sizes/font_size = 12
-text = "Slow Tower"
+icon = ExtResource("3_nysjs")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="MoneyTowerBuyButton" type="Button" parent="TowerShop/MarginContainer/ButtonContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.498039, 0.498039, 0.498039, 1)
 theme_override_font_sizes/font_size = 12
-text = "Money Tower"
+icon = ExtResource("4_wuk7h")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="HSeparator" type="HSeparator" parent="TowerShop/MarginContainer/ButtonContainer"]
@@ -74,11 +90,15 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="NæsteRundeKnap" type="Button" parent="TowerShop/MarginContainer/ButtonContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/icon_hover_color = Color(0.498039, 0.498039, 0.498039, 1)
 theme_override_font_sizes/font_size = 12
-text = "Next Round"
+icon = ExtResource("5_7n8xs")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerInfo" type="Control" parent="."]
