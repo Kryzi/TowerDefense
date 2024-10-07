@@ -24,5 +24,15 @@ func Shoot():
 func _on_timer_timeout():
 	if enemies_in_range != [] and placed == true:
 		Shoot()
-	
-	
+
+
+func _on_spawn_check_area_entered(_area):
+	get_node("/root/World/GameManager").canPlaceFalse()
+
+
+func _on_spawn_check_area_exited(_area):
+	var spawnCheck = %SpawnCheck
+	var tower_collision_count = spawnCheck.get_overlapping_areas().size()
+	if tower_collision_count == 0 and not placed:
+		get_node("/root/World/GameManager").canPlaceTrue()
+		
