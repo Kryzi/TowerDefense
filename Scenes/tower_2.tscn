@@ -28,7 +28,7 @@ animations = [{
 "texture": ExtResource("5_r6k06")
 }],
 "loop": false,
-"name": &"new_animation",
+"name": &"Shoot",
 "speed": 5.0
 }]
 
