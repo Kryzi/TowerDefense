@@ -112,6 +112,7 @@ offset_right = 1120.0
 offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "null"
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="TowerShop/MarginContainer/Node"]
 offset_left = 1050.0
@@ -119,6 +120,7 @@ offset_top = 121.0
 offset_right = 1075.0
 offset_bottom = 146.0
 texture = ExtResource("6_i18py")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="TowerShop/MarginContainer/Node"]
 offset_left = 1080.0
@@ -127,6 +129,7 @@ offset_right = 1120.0
 offset_bottom = 294.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "null"
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="TowerShop/MarginContainer/Node"]
 offset_left = 1050.0
@@ -134,6 +137,7 @@ offset_top = 271.0
 offset_right = 1075.0
 offset_bottom = 296.0
 texture = ExtResource("6_i18py")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="TowerShop/MarginContainer/Node"]
 offset_left = 1080.0
@@ -142,6 +146,7 @@ offset_right = 1120.0
 offset_bottom = 444.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "null"
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="TowerShop/MarginContainer/Node"]
 offset_left = 1050.0
@@ -149,6 +154,7 @@ offset_top = 421.0
 offset_right = 1075.0
 offset_bottom = 446.0
 texture = ExtResource("6_i18py")
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayerInfo" type="Control" parent="."]
 custom_minimum_size = Vector2(400, 40)

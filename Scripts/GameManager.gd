@@ -9,9 +9,9 @@ var Currency = 100
 
 var tower
 
-var priceTower1 = 253
-var priceTower2 = 351
-var priceTower3 = 7501
+var priceTower1 = 25
+var priceTower2 = 35
+var priceTower3 = 75
 
 var canPlace = false
 var placingtower = false
