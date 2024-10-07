@@ -40,6 +40,7 @@ _data = {
 }
 
 [node name="Floatingtext" type="Marker2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_myshv")
 
 [node name="Label" type="Label" parent="."]

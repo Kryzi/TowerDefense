@@ -36,11 +36,12 @@ animations = [{
 "texture": ExtResource("7_20agg")
 }],
 "loop": true,
-"name": &"default",
+"name": &"MoneyGeterate",
 "speed": 5.0
 }]
 
 [node name="tower3" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_4ir6p")
@@ -56,13 +57,13 @@ color = Color(0.454902, 0.454902, 0.454902, 0.392157)
 unique_name_in_owner = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="CollisionShape2D/SpawnCheck"]
-position = Vector2(0, -8)
+position = Vector2(-0.5, 0)
 shape = SubResource("CircleShape2D_2qv2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_ablwo")
-frame_progress = 0.0135218
+animation = &"MoneyGeterate"
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
