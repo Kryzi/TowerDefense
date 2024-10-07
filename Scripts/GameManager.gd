@@ -25,13 +25,9 @@ var placingtower = false
 
 func _ready():
 	GameOverScreen.hide()
-	MoneyText.text = "Money = " + str(Currency)
-	HealthText.text = "Health = "+ str(Health)
-
 
 func damage(amount):
 	Health -= amount
-	HealthText.text = "Health = "+ str(Health)
 	print(Health)
 	if Health <= 0:
 		die()
@@ -44,7 +40,6 @@ func die():
 func _on_hud_buy_basic_tower():
 	if Currency >= priceTower1 and not placingtower:
 		Currency -= priceTower1
-		MoneyText.text = "Money = " + str(Currency)
 		tower = BASICTOWER.instantiate()
 		World.call_deferred("add_child", tower)
 		placingtower = true
@@ -52,7 +47,6 @@ func _on_hud_buy_basic_tower():
 func _on_hud_buy_slow_tower():
 	if Currency >= priceTower2 and not placingtower:
 		Currency -= priceTower2
-		MoneyText.text = "Money = " + str(Currency)
 		tower = SLOWTOWER.instantiate()
 		World.call_deferred("add_child", tower)
 		placingtower = true
@@ -61,7 +55,8 @@ var shapeArray: PackedVector2Array
 var polygon
 
 func _physics_process(_delta: float) -> void:
-	
+	MoneyText.text = "Money = " + str(Currency)
+	HealthText.text = "Health = "+ str(Health)
 	
 	if placingtower == true:
 		tower.global_position = get_global_mouse_position()
@@ -99,7 +94,6 @@ func canPlaceTrue():
 func _on_hud_buy_money_tower():
 	if Currency >= priceTower3 and not placingtower:
 		Currency -= priceTower3
-		MoneyText.text = "Money = " + str(Currency)
 		tower = TOWER_3.instantiate()
 		World.call_deferred("add_child", tower)
 		placingtower = true
