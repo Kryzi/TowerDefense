@@ -55,8 +55,8 @@ var shapeArray: PackedVector2Array
 var polygon
 
 func _physics_process(_delta: float) -> void:
-	MoneyText.text = "Money = " + str(Currency)
-	HealthText.text = "Health = "+ str(Health)
+	MoneyText.text = str(Currency)
+	HealthText.text = str(Health)
 	
 	if placingtower == true:
 		tower.global_position = get_global_mouse_position()
