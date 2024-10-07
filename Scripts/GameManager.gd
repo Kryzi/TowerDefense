@@ -11,7 +11,7 @@ var priceTower1 = 25
 var priceTower2 = 35
 var priceTower3 = 75
 
-var canPlace = true
+var canPlace = false
 var placingtower = false
 
 @export var World: Node2D
@@ -29,7 +29,7 @@ func _ready():
 func damage(amount):
 	Health -= amount
 	print(Health)
-	if Health == 0:
+	if Health <= 0:
 		die()
 
 func die():
@@ -40,7 +40,7 @@ func die():
 var tower
 
 func _on_hud_buy_basic_tower():
-	if Currency >= priceTower1:
+	if Currency >= priceTower1 and not placingtower:
 		Currency -= priceTower1
 		
 		tower = BASICTOWER.instantiate()
@@ -48,7 +48,7 @@ func _on_hud_buy_basic_tower():
 		placingtower = true
 
 func _on_hud_buy_slow_tower():
-	if Currency >= priceTower2:
+	if Currency >= priceTower2  and not placingtower:
 		Currency -= priceTower2
 		
 		tower = SLOWTOWER.instantiate()
