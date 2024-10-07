@@ -64,6 +64,8 @@ shape = SubResource("CircleShape2D_2qv2n")
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_ablwo")
 animation = &"MoneyGeterate"
+frame = 4
+frame_progress = 0.945418
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
