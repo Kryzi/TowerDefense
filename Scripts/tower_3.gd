@@ -1,7 +1,7 @@
 extends Area2D
 
 var placed = false
-var CurrentcyAmount = 20
+var CurrentcyAmount = 69
 
 const FLOATINGTEXT = preload("res://Scenes/floatingtext.tscn")
 
