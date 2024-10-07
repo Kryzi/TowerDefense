@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
 [ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/hud.tscn" id="3_ho7cv"]
 [ext_resource type="PackedScene" uid="uid://bfys168djkcgh" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
-[ext_resource type="Texture2D" uid="uid://cr1aqelrtduml" path="res://assets/Map 1.png" id="4_xfm3p"]
+[ext_resource type="Texture2D" uid="uid://bw7bpiaex2ybs" path="res://assets/Map 1.png" id="4_xfm3p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3wt5"]
 animations = [{
