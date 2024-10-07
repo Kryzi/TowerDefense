@@ -77,13 +77,12 @@ func _physics_process(_delta: float) -> void:
 		
 		polygon.polygon = shapeArray
 		
-	
-	if Input.is_action_just_pressed("left_mouse_click") and placingtower == true:
-		placingtower = false
-		tower.placed = true
-		polygon.visible = false
 		
-		
+		if Input.is_action_just_pressed("left_mouse_click") and canPlace == true:
+			placingtower = false
+			tower.placed = true
+			polygon.visible = false
+
 
 func canPlaceFalse():
 	canPlace = false
