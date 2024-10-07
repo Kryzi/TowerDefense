@@ -21,7 +21,7 @@ func _get_direction():
 	return Vector2(randf_range(-1, 1), -randf()) * 16
  
 func getMoney():
-	if placed == false:
+	if placed == true:
 		get_node("/root/World/GameManager").Currency += CurrentcyAmount
 		popup()
 		randomize()
