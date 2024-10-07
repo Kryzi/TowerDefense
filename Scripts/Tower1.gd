@@ -4,9 +4,9 @@ const BULLET = preload("res://Scenes/bullet_1.tscn")
 var enemies_in_range
 var placed = false
 @onready var GameManager = get_node("/root/World/GameManager")
-
+var currentUpgradeIndex = 0
 var UpgradePriceTower1 = 10
-
+var maxUpgrades = 5
 func _physics_process(_delta):
 	if placed == true:
 		enemies_in_range = get_overlapping_bodies() # Finder enemys som er inde i collisionshape
@@ -49,8 +49,8 @@ func _on_spawn_check_area_exited(_area):
 func _on_spawn_check_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and placed:
-			if GameManager.Currency >= UpgradePriceTower1:
+			if GameManager.Currency >= UpgradePriceTower1 and currentUpgradeIndex < maxUpgrades:
 					GameManager.Currency -= UpgradePriceTower1
-					
+					currentUpgradeIndex += 1
 					UpgradePriceTower1 += 10
-					$Timer.wait_time *= 0.7
+					$Timer.wait_time *= 0.9
