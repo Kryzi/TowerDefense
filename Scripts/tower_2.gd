@@ -20,7 +20,6 @@ func Shoot():
 	newBULLET.global_rotation = $AnimatedSprite2D/ShootingPoint.global_rotation
 	get_tree().root.add_child(newBULLET)
 
-
 func _on_timer_timeout():
 	if enemies_in_range != [] and placed == true:
 		Shoot()
