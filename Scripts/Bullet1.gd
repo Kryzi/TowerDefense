@@ -4,7 +4,7 @@ var travelled_distance = 0
 var pierce = 1
 
 func _physics_process(delta):
-	const SPEED = 200
+	const SPEED = 300
 	const RANGE = 1200
 	
 	var direction = Vector2.UP.rotated(rotation)

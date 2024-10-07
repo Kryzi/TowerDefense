@@ -1,7 +1,7 @@
 extends Area2D
 
 var placed = false
-var CurrencyAmount = 2
+var CurrencyAmount = 5
 var CurrencyPerRunde = 5
 var CurrencyTilbage
 
