@@ -1,6 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1g57gcc7omwd"]
+[gd_scene load_steps=11 format=3 uid="uid://d1g57gcc7omwd"]
 
-[ext_resource type="Texture2D" uid="uid://bxjdce3y05nsm" path="res://icon.svg" id="1_vrbgy"]
+[ext_resource type="Script" path="res://Scripts/tower_3.gd" id="1_4ir6p"]
+[ext_resource type="Texture2D" uid="uid://s7pymngq1hms" path="res://assets/Tower 3.1.png" id="2_7b2yp"]
+[ext_resource type="Texture2D" uid="uid://c3as1gipxv2oc" path="res://assets/Tower 3.2.png" id="3_lih16"]
+[ext_resource type="Texture2D" uid="uid://dnuv128m3gqy1" path="res://assets/Tower 3.3.png" id="4_lw06r"]
+[ext_resource type="Texture2D" uid="uid://utkhlk5fawlj" path="res://assets/Tower 3.4.png" id="5_4rbbc"]
+[ext_resource type="Texture2D" uid="uid://ckc1xvvc4xso6" path="res://assets/Tower 3.5.png" id="6_hwppt"]
+[ext_resource type="Texture2D" uid="uid://bnropd6tvmi5f" path="res://assets/Tower 3.6.png" id="7_20agg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aryud"]
 radius = 112.285
@@ -12,7 +18,22 @@ radius = 24.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vrbgy")
+"texture": ExtResource("2_7b2yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lih16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lw06r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4rbbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hwppt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_20agg")
 }],
 "loop": true,
 "name": &"default",
@@ -22,9 +43,11 @@ animations = [{
 [node name="tower3" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("1_4ir6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aryud")
+disabled = true
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
 color = Color(0.454902, 0.454902, 0.454902, 0.392157)
@@ -39,13 +62,15 @@ shape = SubResource("CircleShape2D_2qv2n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_ablwo")
-
-[node name="ShootingPoint" type="Marker2D" parent="AnimatedSprite2D"]
-position = Vector2(0, -6)
+frame_progress = 0.0135218
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 autostart = true
+
+[node name="TextPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-6, -22)
 
 [connection signal="area_entered" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_area_entered"]
 [connection signal="area_exited" from="CollisionShape2D/SpawnCheck" to="." method="_on_spawn_check_area_exited"]
