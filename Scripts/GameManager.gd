@@ -48,7 +48,7 @@ func _on_hud_buy_basic_tower():
 		placingtower = true
 
 func _on_hud_buy_slow_tower():
-	if Currency >= priceTower2  and not placingtower:
+	if Currency >= priceTower2 and not placingtower:
 		Currency -= priceTower2
 		
 		tower = SLOWTOWER.instantiate()
@@ -96,7 +96,7 @@ func canPlaceTrue():
 
 
 func _on_hud_buy_money_tower():
-	if Currency >= priceTower3:
+	if Currency >= priceTower3 and not placingtower:
 		Currency -= priceTower3
 		
 		tower = TOWER_3.instantiate()
