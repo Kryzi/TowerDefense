@@ -156,6 +156,14 @@ offset_bottom = 446.0
 texture = ExtResource("6_i18py")
 metadata/_edit_use_anchors_ = true
 
+[node name="Button" type="Button" parent="TowerShop"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 489.0
+offset_right = 98.0
+offset_bottom = 520.0
+text = "autoplay"
+
 [node name="PlayerInfo" type="Control" parent="."]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 3
@@ -256,5 +264,6 @@ icon_alignment = 1
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/SlowTowerBuyButton" to="." method="_on_slow_tower_buy_button_pressed"]
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/MoneyTowerBuyButton" to="." method="_on_money_tower_buy_button_pressed"]
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/NæsteRundeKnap" to="." method="_on_næste_runde_knap_pressed"]
+[connection signal="pressed" from="TowerShop/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOverScreen/Quit" to="." method="_on_quit_pressed"]

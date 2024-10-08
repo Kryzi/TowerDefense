@@ -6,11 +6,16 @@ const VIRUS_3 = preload("res://Scenes/virus_3.tscn")
 
 var currentRound = 0
 var waveDone = true
+var autoplay = false
 
 func _ready():
 	pass
 
 func _process(_delta):
+	if autoplay == true and get_tree().get_nodes_in_group("enemy") == []:
+		currentRound += 1
+		waveDone = true
+	
 	if currentRound == 1 and waveDone == true:
 		wave([1, 1], [2, 10], [0.1, 1])
 	elif currentRound == 2 and waveDone == true:
@@ -29,8 +34,6 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 	for i in enemy.size():
 		
 		for n in amount[i]:
-			await get_tree().create_timer(TidMellem[i]).timeout
-			
 			var virus
 			
 			if enemy[i] == 1:
@@ -41,6 +44,7 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 				virus = VIRUS_3.instantiate()
 			
 			call_deferred("add_child", virus)
+			await get_tree().create_timer(TidMellem[i]).timeout
 
 func _on_hud_next_round():
 	if get_tree().get_nodes_in_group("enemy") == []:
