@@ -31,7 +31,7 @@ func _on_money_tower_buy_button_pressed():
 	buy_money_tower.emit()
 
 var i = 1
-func _on_button_pressed():
+func _on_autoplay_pressed():
 	if i == 0:
 		get_node("/root/World/Path2D").autoplay = false
 		i = 1
@@ -39,4 +39,3 @@ func _on_button_pressed():
 	if i == 1:
 		get_node("/root/World/Path2D").autoplay = true
 		i = 0
-	

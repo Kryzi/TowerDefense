@@ -160,13 +160,27 @@ offset_bottom = 446.0
 texture = ExtResource("6_i18py")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="TowerShop"]
+[node name="Autoplay" type="CheckButton" parent="TowerShop"]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 489.0
-offset_right = 98.0
-offset_bottom = 520.0
-text = "autoplay"
+offset_left = 17.0
+offset_top = 480.0
+offset_right = 61.0
+offset_bottom = 512.0
+scale = Vector2(2, 2)
+focus_mode = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="TowerShop/Autoplay"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -1.5
+offset_right = 102.0
+offset_bottom = 22.5
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_uoaq4")
+theme_override_font_sizes/font_size = 20
+text = "Autoplay"
 
 [node name="PlayerInfo" type="Control" parent="."]
 custom_minimum_size = Vector2(400, 40)
@@ -272,6 +286,6 @@ icon_alignment = 1
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/SlowTowerBuyButton" to="." method="_on_slow_tower_buy_button_pressed"]
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/MoneyTowerBuyButton" to="." method="_on_money_tower_buy_button_pressed"]
 [connection signal="pressed" from="TowerShop/MarginContainer/ButtonContainer/NæsteRundeKnap" to="." method="_on_næste_runde_knap_pressed"]
-[connection signal="pressed" from="TowerShop/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TowerShop/Autoplay" to="." method="_on_autoplay_pressed"]
 [connection signal="pressed" from="GameOverScreen/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOverScreen/Quit" to="." method="_on_quit_pressed"]
