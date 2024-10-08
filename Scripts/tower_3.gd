@@ -15,7 +15,7 @@ func _ready():
 	CurrencyTilbage = CurrencyPerRunde
 	add_to_group("Tower3")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 		if GameManager.Currency >= UpgradePriceTower3 and placed:
 			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.show()
 		else:
@@ -65,7 +65,7 @@ func _on_timer_timeout():
 	if placed == true:
 		getMoney()
 
-func _on_spawn_check_input_event(viewport, event, shape_idx):
+func _on_spawn_check_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and placed:
 			if GameManager.Currency >= UpgradePriceTower3 and currentUpgradeIndex < maxUpgrades:

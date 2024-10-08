@@ -7,6 +7,8 @@ var placed = false
 var currentUpgradeIndex = 0
 var UpgradePriceTower2 = 5
 var maxUpgrades = 5
+
+
 func _physics_process(_delta):
 	if placed == true:
 		enemies_in_range = get_overlapping_bodies() # Finder enemys som er inde i collisionshape
@@ -44,7 +46,7 @@ func _on_spawn_check_area_exited(_area):
 		get_node("/root/World/GameManager").canPlaceTrue()
 		
 
-func _on_spawn_check_input_event(viewport, event, shape_idx):
+func _on_spawn_check_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and placed:
 			if GameManager.Currency >= UpgradePriceTower2  and currentUpgradeIndex < maxUpgrades:
