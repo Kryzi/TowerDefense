@@ -26,6 +26,16 @@ func _process(_delta):
 		wave([1, 2, 3], [3, 3, 3], [1, 1, 1])
 	elif currentRound == 5 and waveDone == true:
 		wave([3], [8], [0.5])
+	elif currentRound == 6 and waveDone == true:
+		wave([3, 1, 2, 3], [2, 20, 10, 5], [1, 0.7, 0.1, 2])
+	elif currentRound == 7 and waveDone == true:
+		wave([2, 1], [50, 10], [0.1, 0.2])
+	elif currentRound == 8 and waveDone == true:
+		wave([3, 2, 3, 1, 2], [8, 5, 2, 10, 10], [0.2, 0.5, 1, 0.1, 0.2])
+	elif currentRound == 13 and waveDone == true:
+		wave([3, 2, 3, 1, 2], [80, 50, 20, 100, 100], [0.1, 0.1, 0.1, 0.1, 0.1])
+	elif currentRound > 8 and waveDone == true:
+		wave([randi_range(1, 3)], [randi_range(5, 50)], [randf_range(0.1, 1)])
 
 
 func wave(enemy : Array, amount : Array, TidMellem : Array):
