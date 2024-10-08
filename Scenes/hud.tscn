@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://8snbvs27wihv"]
+[gd_scene load_steps=12 format=3 uid="uid://8snbvs27wihv"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_4qxoa"]
 [ext_resource type="Texture2D" uid="uid://6vb3g1gm7t7p" path="res://assets/UI/reset_knap.png" id="2_ki0pt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdsf8rhl73qkd" path="res://assets/UI/tower3_knap.png" id="4_wuk7h"]
 [ext_resource type="Texture2D" uid="uid://dako4uc012fsc" path="res://assets/UI/nextround_knap.png" id="5_7n8xs"]
 [ext_resource type="Texture2D" uid="uid://qx64p10q4vx7" path="res://assets/UI/penge_icon.png" id="6_i18py"]
+[ext_resource type="FontFile" uid="uid://2w72h032kfv1" path="res://assets/PixelDigivolve-mOm9.ttf" id="6_uoaq4"]
 [ext_resource type="Texture2D" uid="uid://cltx6i3664y6r" path="res://assets/UI/health_ikon.png" id="7_tmc70"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -103,18 +104,19 @@ icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Node" type="Node" parent="TowerShop/MarginContainer"]
+[node name="Priser" type="Node" parent="TowerShop/MarginContainer"]
 
-[node name="Label" type="Label" parent="TowerShop/MarginContainer/Node"]
+[node name="Label" type="Label" parent="TowerShop/MarginContainer/Priser"]
 offset_left = 1080.0
 offset_top = 121.0
 offset_right = 1120.0
 offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_uoaq4")
 text = "null"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="TowerShop/MarginContainer/Node"]
+[node name="TextureRect" type="TextureRect" parent="TowerShop/MarginContainer/Priser"]
 offset_left = 1050.0
 offset_top = 121.0
 offset_right = 1075.0
@@ -122,16 +124,17 @@ offset_bottom = 146.0
 texture = ExtResource("6_i18py")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="TowerShop/MarginContainer/Node"]
+[node name="Label2" type="Label" parent="TowerShop/MarginContainer/Priser"]
 offset_left = 1080.0
 offset_top = 271.0
 offset_right = 1120.0
 offset_bottom = 294.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_uoaq4")
 text = "null"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="TowerShop/MarginContainer/Node"]
+[node name="TextureRect2" type="TextureRect" parent="TowerShop/MarginContainer/Priser"]
 offset_left = 1050.0
 offset_top = 271.0
 offset_right = 1075.0
@@ -139,16 +142,17 @@ offset_bottom = 296.0
 texture = ExtResource("6_i18py")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="TowerShop/MarginContainer/Node"]
+[node name="Label3" type="Label" parent="TowerShop/MarginContainer/Priser"]
 offset_left = 1080.0
 offset_top = 421.0
 offset_right = 1120.0
 offset_bottom = 444.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_uoaq4")
 text = "null"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect3" type="TextureRect" parent="TowerShop/MarginContainer/Node"]
+[node name="TextureRect3" type="TextureRect" parent="TowerShop/MarginContainer/Priser"]
 offset_left = 1050.0
 offset_top = 421.0
 offset_right = 1075.0
@@ -206,6 +210,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_uoaq4")
+theme_override_font_sizes/font_size = 18
 text = "RichText"
 
 [node name="HealthIcon" type="TextureRect" parent="PlayerInfo/MarginContainer/LabelContainer"]
@@ -220,6 +226,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_uoaq4")
+theme_override_font_sizes/font_size = 18
 text = "HealthyText"
 
 [node name="ColorRect" type="ColorRect" parent="PlayerInfo/MarginContainer/LabelContainer"]

@@ -4,8 +4,8 @@ const BASICTOWER = preload("res://Scenes/tower.tscn")
 const SLOWTOWER = preload("res://Scenes/tower_2.tscn")
 const TOWER_3 = preload("res://Scenes/tower_3.tscn")
 
-var Health = 1
-var Currency = 100
+var Health = 50
+var Currency = 65
 
 var tower
 
@@ -25,9 +25,10 @@ var placingtower = false
 
 func _ready():
 	GameOverScreen.hide()
-	get_node("/root/World/HUD/TowerShop/MarginContainer/Node/Label").text = str(priceTower1)
-	get_node("/root/World/HUD/TowerShop/MarginContainer/Node/Label2").text  = str(priceTower2)
-	get_node("/root/World/HUD/TowerShop/MarginContainer/Node/Label3").text = str(priceTower3)
+	
+	get_node("/root/World/HUD/TowerShop/MarginContainer/Priser/Label").text = str(priceTower1)
+	get_node("/root/World/HUD/TowerShop/MarginContainer/Priser/Label2").text  = str(priceTower2)
+	get_node("/root/World/HUD/TowerShop/MarginContainer/Priser/Label3").text = str(priceTower3)
 
 func damage(amount):
 	Health -= amount
