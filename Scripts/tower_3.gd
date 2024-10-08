@@ -13,6 +13,7 @@ const FLOATINGTEXT = preload("res://Scenes/floatingtext.tscn")
 func _ready():
 	$AnimatedSprite2D.frame = 0
 	CurrencyTilbage = CurrencyPerRunde
+	add_to_group("Tower3")
 
 func _physics_process(delta):
 		if GameManager.Currency >= UpgradePriceTower3 and placed:

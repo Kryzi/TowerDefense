@@ -13,6 +13,9 @@ func _ready():
 
 func _process(_delta):
 	if autoplay == true and get_tree().get_nodes_in_group("enemy") == []:
+		var i = get_tree().get_nodes_in_group("Tower3")
+		for n in i:
+			n.getMoney()
 		currentRound += 1
 		waveDone = true
 	
