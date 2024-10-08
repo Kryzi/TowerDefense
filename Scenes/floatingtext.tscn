@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4e0cju3ydm1e"]
+[gd_scene load_steps=6 format=3 uid="uid://c4e0cju3ydm1e"]
 
 [ext_resource type="Script" path="res://Scripts/floatingtext.gd" id="1_myshv"]
+[ext_resource type="FontFile" uid="uid://2w72h032kfv1" path="res://assets/PixelDigivolve-mOm9.ttf" id="2_ur6bf"]
 
 [sub_resource type="Animation" id="Animation_e7hw2"]
 resource_name = "Effect"
@@ -17,6 +18,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_cybe4"]
 length = 0.001
@@ -32,6 +45,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57vet"]
 _data = {
@@ -40,13 +65,15 @@ _data = {
 }
 
 [node name="Floatingtext" type="Marker2D"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 script = ExtResource("1_myshv")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_ur6bf")
+theme_override_font_sizes/font_size = 32
 text = "20"
 metadata/_edit_use_anchors_ = true
 

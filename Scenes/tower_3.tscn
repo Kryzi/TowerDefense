@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1g57gcc7omwd"]
 
 [ext_resource type="Script" path="res://Scripts/tower_3.gd" id="1_4ir6p"]
-[ext_resource type="Texture2D" uid="uid://s7pymngq1hms" path="res://assets/Tower 3.1.png" id="2_7b2yp"]
-[ext_resource type="Texture2D" uid="uid://c3as1gipxv2oc" path="res://assets/Tower 3.2.png" id="3_lih16"]
-[ext_resource type="Texture2D" uid="uid://dnuv128m3gqy1" path="res://assets/Tower 3.3.png" id="4_lw06r"]
-[ext_resource type="Texture2D" uid="uid://utkhlk5fawlj" path="res://assets/Tower 3.4.png" id="5_4rbbc"]
-[ext_resource type="Texture2D" uid="uid://ckc1xvvc4xso6" path="res://assets/Tower 3.5.png" id="6_hwppt"]
-[ext_resource type="Texture2D" uid="uid://bnropd6tvmi5f" path="res://assets/Tower 3.6.png" id="7_20agg"]
+[ext_resource type="Texture2D" uid="uid://s7pymngq1hms" path="res://assets/towers/Tower 3.1.png" id="2_4t1r2"]
+[ext_resource type="Texture2D" uid="uid://c3as1gipxv2oc" path="res://assets/towers/Tower 3.2.png" id="3_5rbi5"]
+[ext_resource type="Texture2D" uid="uid://dnuv128m3gqy1" path="res://assets/towers/Tower 3.3.png" id="4_8utjs"]
+[ext_resource type="Texture2D" uid="uid://utkhlk5fawlj" path="res://assets/towers/Tower 3.4.png" id="5_fks6v"]
+[ext_resource type="Texture2D" uid="uid://ckc1xvvc4xso6" path="res://assets/towers/Tower 3.5.png" id="6_71eqp"]
+[ext_resource type="Texture2D" uid="uid://bnropd6tvmi5f" path="res://assets/towers/Tower 3.6.png" id="7_ilsyo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aryud"]
 radius = 112.285
@@ -18,22 +18,22 @@ radius = 24.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7b2yp")
+"texture": ExtResource("2_4t1r2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_lih16")
+"texture": ExtResource("3_5rbi5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_lw06r")
+"texture": ExtResource("4_8utjs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_4rbbc")
+"texture": ExtResource("5_fks6v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_hwppt")
+"texture": ExtResource("6_71eqp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_20agg")
+"texture": ExtResource("7_ilsyo")
 }],
 "loop": true,
 "name": &"MoneyGeterate",

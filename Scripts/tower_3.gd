@@ -33,7 +33,7 @@ func popup():
 	get_tree().current_scene.add_child(text)
  
 func _get_direction():
-	return Vector2(randf_range(-1, 1), -randf()) * 25
+	return Vector2(randf_range(-1, 1), -randf_range(0, 5)) * 20
  
 func getMoney():
 	if  get_tree().get_nodes_in_group("enemy") != [] and CurrencyTilbage > 0:

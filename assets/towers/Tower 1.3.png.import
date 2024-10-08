@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqpfvlqtwv1up"
-path="res://.godot/imported/Bullet 1.1.png-61ffbbac17cdf29c574b0f6b56253464.ctex"
+uid="uid://cnlldtsb4cjkl"
+path="res://.godot/imported/Tower 1.3.png-2db85e679e3f96c5a209d5dfeb94638d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bullet 1.1.png"
-dest_files=["res://.godot/imported/Bullet 1.1.png-61ffbbac17cdf29c574b0f6b56253464.ctex"]
+source_file="res://assets/towers/Tower 1.3.png"
+dest_files=["res://.godot/imported/Tower 1.3.png-2db85e679e3f96c5a209d5dfeb94638d.ctex"]
 
 [params]
 
