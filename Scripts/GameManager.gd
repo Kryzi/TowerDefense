@@ -4,7 +4,7 @@ const BASICTOWER = preload("res://Scenes/tower.tscn")
 const SLOWTOWER = preload("res://Scenes/tower_2.tscn")
 const TOWER_3 = preload("res://Scenes/tower_3.tscn")
 
-var Health = 50
+var Health = 5
 var Currency = 65
 
 var tower
@@ -37,6 +37,8 @@ func damage(amount):
 		die()
 
 func die():
+	await get_tree().create_timer(0.05).timeout
+	Health = 0
 	get_tree().paused = true
 	print("i am dead")
 	GameOverScreen.show()

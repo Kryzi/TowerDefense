@@ -74,4 +74,3 @@ func _on_spawn_check_input_event(_viewport, event, _shape_idx):
 					UpgradePriceTower3 += 10
 					currentUpgradeIndex += 1
 					CurrencyAmount += 5
-
