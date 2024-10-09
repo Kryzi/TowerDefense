@@ -15,7 +15,7 @@ func _physics_process(_delta):
 			var target_enemy = enemies_in_range.front()
 			look_at(target_enemy.global_position)
 		
-		if GameManager.Currency >= UpgradePriceTower1:
+		if GameManager.Currency >= UpgradePriceTower1 and placed and currentUpgradeIndex < maxUpgrades:
 			$SpawnCheck/Hitbox/HitboxPolygon.show()
 		else:
 			$SpawnCheck/Hitbox/HitboxPolygon.hide()

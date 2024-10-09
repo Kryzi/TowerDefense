@@ -6,7 +6,8 @@ const TOWER_3 = preload("res://Scenes/tower_3.tscn")
 
 var Health = 50
 var Currency = 65
-
+var roundNumber = 1
+var winRound = 5
 var tower
 
 var priceTower1 = 25
@@ -20,12 +21,13 @@ var placingtower = false
 
 @onready var MoneyText = get_tree().get_root().get_node("World/HUD/%Money")
 @onready var HealthText = get_tree().get_root().get_node("World/HUD/%Health")
+@onready var RoundText = get_tree().get_root().get_node("World/HUD/%Round")
 @onready var GameOverScreen = get_tree().get_root().get_node("World/HUD/GameOverScreen")
-@onready var Quit = get_tree().get_root().get_node("World/HUD/GameOverScreen/Quit")
+@onready var WinScreen = get_tree().get_root().get_node("World/HUD/WinScreen")
 
 func _ready():
 	GameOverScreen.hide()
-	
+	WinScreen.hide()
 	get_node("/root/World/HUD/TowerShop/MarginContainer/Priser/Label").text = str(priceTower1)
 	get_node("/root/World/HUD/TowerShop/MarginContainer/Priser/Label2").text  = str(priceTower2)
 	get_node("/root/World/HUD/TowerShop/MarginContainer/Priser/Label3").text = str(priceTower3)
@@ -40,7 +42,6 @@ func die():
 	await get_tree().create_timer(0.05).timeout
 	Health = 0
 	get_tree().paused = true
-	print("i am dead")
 	GameOverScreen.show()
 
 func _on_hud_buy_basic_tower():
@@ -63,6 +64,7 @@ var polygon
 func _physics_process(_delta: float) -> void:
 	MoneyText.text = str(Currency)
 	HealthText.text = str(Health)
+	RoundText.text = "Round: " + str(roundNumber) + "/50"
 	
 	if placingtower == true:
 		tower.global_position = get_global_mouse_position()
@@ -103,3 +105,8 @@ func _on_hud_buy_money_tower():
 		tower = TOWER_3.instantiate()
 		World.call_deferred("add_child", tower)
 		placingtower = true
+
+
+func _on_path_2d_win_game():
+	get_tree().paused = true
+	WinScreen.show()

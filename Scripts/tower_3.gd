@@ -6,7 +6,7 @@ var CurrencyPerRunde = 5
 var CurrencyTilbage
 @onready var GameManager = get_node("/root/World/GameManager")
 var maxUpgrades = 5
-var UpgradePriceTower3 = 5
+var UpgradePriceTower3 = 20
 var currentUpgradeIndex = 0
 const FLOATINGTEXT = preload("res://Scenes/floatingtext.tscn")
 
@@ -16,7 +16,7 @@ func _ready():
 	add_to_group("Tower3")
 
 func _physics_process(_delta):
-		if GameManager.Currency >= UpgradePriceTower3 and placed:
+		if GameManager.Currency >= UpgradePriceTower3 and placed and currentUpgradeIndex < maxUpgrades:
 			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.show()
 		else:
 			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.hide()

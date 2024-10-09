@@ -17,7 +17,7 @@ func _physics_process(_delta):
 			look_at(target_enemy.global_position)
 			rotate(PI/2)
 		
-		if GameManager.Currency >= UpgradePriceTower2:
+		if GameManager.Currency >= UpgradePriceTower2 and placed and currentUpgradeIndex < maxUpgrades:
 			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.show()
 		else:
 			$CollisionShape2D/SpawnCheck/Hitbox/HitboxPolygon.hide()

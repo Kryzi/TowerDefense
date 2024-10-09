@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dyaeva2to770s"]
 
 [ext_resource type="Script" path="res://Scripts/Path2D.gd" id="1_4exjo"]
-[ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/HUD.tscn" id="3_ho7cv"]
+[ext_resource type="PackedScene" uid="uid://8snbvs27wihv" path="res://Scenes/hud.tscn" id="3_ho7cv"]
 [ext_resource type="PackedScene" uid="uid://bfys168djkcgh" path="res://Scenes/game_manager.tscn" id="3_qrw8v"]
 [ext_resource type="Texture2D" uid="uid://cr1aqelrtduml" path="res://assets/Map 1.png" id="4_xfm3p"]
 
@@ -55,6 +55,7 @@ polygon = PackedVector2Array(399, -3, 399, 37, -1, 37, -1, -3)
 position = Vector2(1, 3)
 polygon = PackedVector2Array(1031, -3.00001, 1151, -3, 1151, 645, 1031, 645)
 
+[connection signal="WinGame" from="Path2D" to="GameManager" method="_on_path_2d_win_game"]
 [connection signal="buy_basic_tower" from="HUD" to="GameManager" method="_on_hud_buy_basic_tower"]
 [connection signal="buy_money_tower" from="HUD" to="GameManager" method="_on_hud_buy_money_tower"]
 [connection signal="buy_slow_tower" from="HUD" to="GameManager" method="_on_hud_buy_slow_tower"]

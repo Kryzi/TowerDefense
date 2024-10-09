@@ -4,7 +4,9 @@ const VIRUS_1 = preload("res://Scenes/virus_1.tscn")
 const VIRUS_2 = preload("res://Scenes/virus_2.tscn")
 const VIRUS_3 = preload("res://Scenes/virus_3.tscn")
 
+signal WinGame
 var currentRound = 0
+var winRound = 2
 var waveDone = true
 var autoplay = false
 
@@ -17,8 +19,10 @@ func _process(_delta):
 		for n in i:
 			n.getMoney()
 		currentRound += 1
+		$"../GameManager".roundNumber = currentRound
 		waveDone = true
 	
+		
 	if currentRound == 1 and waveDone == true:
 		wave([1, 1], [2, 10], [0.1, 1])
 	elif currentRound == 2 and waveDone == true:
@@ -39,7 +43,9 @@ func _process(_delta):
 		wave([3, 2, 3, 1, 2], [80, 50, 20, 100, 100], [0.1, 0.1, 0.1, 0.1, 0.1])
 	elif currentRound > 8 and waveDone == true:
 		wave([randi_range(1 + round_scale, 3 + round_scale)], [randi_range(5 + round_scale, 50 + round_scale)], [randf_range(0.1, 1)])
-
+	
+	#if currentRound >= winRound and get_tree().get_nodes_in_group("enemy") == [] and waveDone:
+	#	WinGame.emit()
 
 func wave(enemy : Array, amount : Array, TidMellem : Array):
 	waveDone = false
@@ -62,6 +68,7 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 func _on_hud_next_round():
 	if get_tree().get_nodes_in_group("enemy") == []:
 		currentRound += 1
+		$"../GameManager".roundNumber = currentRound
 		if currentRound < 13:
 			scale_up()
 		waveDone = true
