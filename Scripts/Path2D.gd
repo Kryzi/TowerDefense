@@ -38,7 +38,7 @@ func _process(_delta):
 	elif currentRound == 13 and waveDone == true:
 		wave([3, 2, 3, 1, 2], [80, 50, 20, 100, 100], [0.1, 0.1, 0.1, 0.1, 0.1])
 	elif currentRound > 8 and waveDone == true:
-		wave([randi_range(1 + round_scale, 3 + round_scale)], [randi_range(5 + round_scale, 50 + round_scale)], [randf_range(0.1, 1)])
+		wave([randi_range(1, 3)], [randi_range(5, 50)], [randf_range(0.1, 1)])
 
 
 func wave(enemy : Array, amount : Array, TidMellem : Array):
@@ -62,16 +62,4 @@ func wave(enemy : Array, amount : Array, TidMellem : Array):
 func _on_hud_next_round():
 	if get_tree().get_nodes_in_group("enemy") == []:
 		currentRound += 1
-		if currentRound < 13:
-			scale_up()
 		waveDone = true
-
-var enemy_modifire = 0
-var scale_up_count = 0
-var round_scale = 0
-
-func scale_up():
-	scale_up_count += 1
-	round_scale += 1
-	if scale_up_count % 5:
-		enemy_modifire += 1
