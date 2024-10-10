@@ -6,7 +6,7 @@ const VIRUS_3 = preload("res://Scenes/virus_3.tscn")
 
 signal WinGame
 var currentRound = 0
-var winRound = 2
+var winRound = 50
 var waveDone = true
 var autoplay = false
 
@@ -44,8 +44,8 @@ func _process(_delta):
 	elif currentRound > 8 and waveDone == true:
 		wave([randi_range(1 + round_scale, 3 + round_scale)], [randi_range(5 + round_scale, 50 + round_scale)], [randf_range(0.1, 1)])
 	
-	#if currentRound >= winRound and get_tree().get_nodes_in_group("enemy") == [] and waveDone:
-	#	WinGame.emit()
+	if currentRound == winRound:
+		WinGame.emit()
 
 func wave(enemy : Array, amount : Array, TidMellem : Array):
 	waveDone = false

@@ -8,6 +8,7 @@ var health = 1
 func _ready():
 	Path = get_parent()
 	add_to_group("enemy")
+	$CharacterBody2D/AnimatedSprite2D.play("default")
 
 func _process(delta):
 	progress += speed * delta

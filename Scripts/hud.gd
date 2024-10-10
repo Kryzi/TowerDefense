@@ -35,3 +35,9 @@ func _on_autoplay_pressed():
 		get_node("/root/World/Path2D").autoplay = false
 	if $TowerShop/Autoplay.button_pressed == true:
 		get_node("/root/World/Path2D").autoplay = true
+
+@onready var WinScreen = $WinScreen
+func _on_freeplay_pressed():
+	get_node("/root/World/Path2D").winRound = 1
+	get_tree().paused = false
+	WinScreen.hide()

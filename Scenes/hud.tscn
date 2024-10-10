@@ -254,6 +254,7 @@ theme_override_font_sizes/font_size = 18
 text = "0/50"
 
 [node name="GameOverScreen" type="VBoxContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(200, 150)
 anchors_preset = 8
 anchor_left = 0.5
@@ -289,7 +290,6 @@ flat = true
 icon_alignment = 1
 
 [node name="WinScreen" type="VBoxContainer" parent="."]
-visible = false
 custom_minimum_size = Vector2(200, 150)
 anchors_preset = 8
 anchor_left = 0.5
@@ -313,12 +313,13 @@ theme_override_font_sizes/font_size = 30
 text = "You win!"
 horizontal_alignment = 1
 
-[node name="Restart" type="Button" parent="WinScreen"]
+[node name="Freeplay" type="Button" parent="WinScreen"]
 process_mode = 3
 layout_mode = 2
 theme_override_colors/icon_hover_color = Color(0.498039, 0.498039, 0.498039, 1)
-icon = ExtResource("2_ki0pt")
-flat = true
+theme_override_fonts/font = ExtResource("6_uoaq4")
+theme_override_font_sizes/font_size = 20
+text = "Freeplay"
 icon_alignment = 1
 
 [node name="Quit" type="Button" parent="WinScreen"]
@@ -336,5 +337,5 @@ icon_alignment = 1
 [connection signal="pressed" from="TowerShop/Autoplay" to="." method="_on_autoplay_pressed"]
 [connection signal="pressed" from="GameOverScreen/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOverScreen/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="WinScreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="WinScreen/Freeplay" to="." method="_on_freeplay_pressed"]
 [connection signal="pressed" from="WinScreen/Quit" to="." method="_on_quit_pressed"]
